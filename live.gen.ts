@@ -4,11 +4,11 @@
 
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$$$$0 from "./sections/Hero.tsx";
-import * as $$$$$$$$1 from "./sections/Theme.tsx";
-import * as $$$$$$$$2 from "./sections/Footer.tsx";
+import * as $$$$$$$$0 from "./sections/Footer.tsx";
+import * as $$$$$$$$1 from "./sections/Hero.tsx";
+import * as $$$$$$$$2 from "./sections/ParagraphList.tsx";
 import * as $$$$$$$$3 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$4 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$4 from "./sections/Theme.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -162,11 +162,11 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/livinrio/sections/Footer.tsx": $$$$$$$$2,
-    "deco-sites/livinrio/sections/Hero.tsx": $$$$$$$$0,
-    "deco-sites/livinrio/sections/ParagraphList.tsx": $$$$$$$$4,
+    "deco-sites/livinrio/sections/Footer.tsx": $$$$$$$$0,
+    "deco-sites/livinrio/sections/Hero.tsx": $$$$$$$$1,
+    "deco-sites/livinrio/sections/ParagraphList.tsx": $$$$$$$$2,
     "deco-sites/livinrio/sections/SimpleTextList.tsx": $$$$$$$$3,
-    "deco-sites/livinrio/sections/Theme.tsx": $$$$$$$$1,
+    "deco-sites/livinrio/sections/Theme.tsx": $$$$$$$$4,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
