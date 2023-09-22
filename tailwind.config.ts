@@ -23,4 +23,11 @@ export const theme = {
 
 export default {
   content: ["./**/*.tsx"],
+  theme: {
+    extend: {
+      screens: {
+        md0: "744px",
+      },
+    },
+  },
 };
