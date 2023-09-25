@@ -24,6 +24,12 @@ export const theme = {
 export default {
   content: ["./**/*.tsx"],
   theme: {
+    fontFamily: {
+      crimsontext: ["Crimson Text", "sans-serif"],
+      crimsonpro: ["Crimson Pro", "sans-serif"],
+      sfpro: ["SF Pro", "sans-serif"],
+      pphatton: ["PP Hatton", "sans-serif"],
+    },
     extend: {
       screens: {
         md0: "744px",

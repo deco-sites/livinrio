@@ -1,1 +1,1 @@
-export { default } from "deco-sites/livinrio/components/ui/GetInTouch.tsx"
+export { default } from "deco-sites/livinrio/components/ui/GetInTouch.tsx";
