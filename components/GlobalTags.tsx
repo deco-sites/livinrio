@@ -47,40 +47,35 @@ function GlobalTags() {
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
-                  src: url('${("/fonts/CrimsonPro-Regular.ttf")
-            }') format('truetype');
+                  src: url('${("/fonts/CrimsonPro-Regular.ttf")}') format('truetype');
                 }
                 @font-face {
                   font-family: 'Crimson Text';
                   font-style: normal;
                   font-weight: 700;
                   font-display: swap;
-                  src: url('${("/fonts/CrimsonText-Bold.ttf")
-            }') format('truetype');
+                  src: url('${("/fonts/CrimsonText-Bold.ttf")}') format('truetype');
                 }
                 @font-face {
                   font-family: 'PP Hatton';
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${("/fonts/PP-Hatton-Medium.ttf")
-            }') format('truetype');
+                  src: url('${("/fonts/PP-Hatton-Medium.ttf")}') format('truetype');
                 }
                 @font-face {
                   font-family: 'SF Pro';
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYMEDIUM.OTF")
-            }') format('opentype');
+                  src: url('${("/fonts/SFPRODISPLAYMEDIUM.OTF")}') format('opentype');
                 }
                 @font-face {
                   font-family: 'SF Pro';
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYREGULAR.OTF")
-            }') format('opentype');
+                  src: url('${("/fonts/SFPRODISPLAYREGULAR.OTF")}') format('opentype');
                 }
             `,
         }}
