@@ -75,7 +75,9 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
-            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">Company website</label>
+            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">
+              Company website
+            </label>
             <input
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
@@ -85,7 +87,9 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">Email</label>
+            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">
+              Email
+            </label>
             <input
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"

@@ -1,5 +1,3 @@
-import { data } from "../../../../AppData/Local/deno/npm/registry.npmjs.org/browserslist/4.21.11/index.d.ts";
-
 export interface SectionData {
   title?: string;
   datas: {

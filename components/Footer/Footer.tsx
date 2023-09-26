@@ -35,7 +35,9 @@ export default function Footer({ partners }: Footer) {
       {/*Mobile InfoFooter View*/}
       <div class="lg:hidden max-w-[664px] lg:max-w-[656px] md0:mx-auto pb-3 mt-[52px] flex flex-col mx-4">
         <div class="flex items-center justify-between">
-          <span class="text-[#252D29] font-sfpro font-medium text-xs">Terms</span>
+          <span class="text-[#252D29] font-sfpro font-medium text-xs">
+            Terms
+          </span>
           <div class="flex flex-col">
             <span class="text-[#252D29] text-[10px] mb-[10px]">Powered by</span>
             {" "}
@@ -43,14 +45,21 @@ export default function Footer({ partners }: Footer) {
           </div>
         </div>
 
-        <span class="text-[#252D29] font-sfpro font-medium text-xs md0:mt-2 mb-0 md0:mb-4">Privacy Policy</span>
+        <span class="text-[#252D29] font-sfpro font-medium text-xs md0:mt-2 mb-0 md0:mb-4">
+          Privacy Policy
+        </span>
 
         <div class="flex items-center justify-between">
-          <span class="text-[#252D29] font-sfpro font-medium text-xs">Cookies</span>
+          <span class="text-[#252D29] font-sfpro font-medium text-xs">
+            Cookies
+          </span>
           <div class="flex flex-col md0:flex-row">
-            <span class="text-[#252D29] text-[10px] font-sfpro font-normal">© 2023 Copyright.</span>
-            {" "}
-            <span class="text-[#252D29] text-[10px] font-sfpro font-normal">All Rights Reserved.</span>
+            <span class="text-[#252D29] text-[10px] font-sfpro font-normal">
+              © 2023 Copyright.
+            </span>{" "}
+            <span class="text-[#252D29] text-[10px] font-sfpro font-normal">
+              All Rights Reserved.
+            </span>
           </div>
         </div>
       </div>
@@ -63,13 +72,21 @@ export default function Footer({ partners }: Footer) {
           </span>
 
           <div class="flex justify-between items-center">
-            <span class="text-[#252D29] font-sfpro font-medium text-sm">Terms</span>
-            <span class="text-[#252D29] font-sfpro font-medium text-sm mx-9">Privacy Policy</span>
-            <span class="text-[#252D29] font-sfpro font-medium text-sm">Cookies</span>
+            <span class="text-[#252D29] font-sfpro font-medium text-sm">
+              Terms
+            </span>
+            <span class="text-[#252D29] font-sfpro font-medium text-sm mx-9">
+              Privacy Policy
+            </span>
+            <span class="text-[#252D29] font-sfpro font-medium text-sm">
+              Cookies
+            </span>
           </div>
 
           <div class="flex items-center">
-            <span class="text-[#252D29] font-sfpro font-normal text-xs mr-4">Powered by</span>{" "}
+            <span class="text-[#252D29] font-sfpro font-normal text-xs mr-4">
+              Powered by
+            </span>{" "}
             <PoweredByDeco width={71} />
           </div>
         </div>
