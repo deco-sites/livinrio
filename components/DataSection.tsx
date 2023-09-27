@@ -19,7 +19,7 @@ export default function DataSection({ title, datas }: SectionData) {
             <h2 class="text-[32px] text-[#252D29] font-bold font-crimsontext leading-[38px] text-center">
               {data?.title}
             </h2>
-            <span class="pt-2 text-[#252D29] text-[10px] font-sfpro font-normal leading-[15px] text-center block">
+            <span class="pt-2 text-[#252D29] text-[10px] font-sfprodisplay font-normal leading-[15px] text-center block">
               {data?.subtitle}
             </span>
           </div>

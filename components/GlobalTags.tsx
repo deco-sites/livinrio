@@ -31,12 +31,12 @@ function GlobalTags() {
       <link
         rel="preload"
         type="text/css"
-        href={asset("/fonts/SFPRODISPLAYMEDIUM.OTF")}
+        href={asset("/fonts/sfprodisplayDISPLAYMEDIUM.OTF")}
       />
       <link
         rel="preload"
         type="text/css"
-        href={asset("/fonts/SFPRODISPLAYREGULAR.OTF")}
+        href={asset("/fonts/sfprodisplayDISPLAYREGULAR.OTF")}
       />
 
       <style
@@ -64,14 +64,14 @@ function GlobalTags() {
                   src: url('${("/fonts/PP-Hatton-Medium.ttf")}') format('truetype');
                 }
                 @font-face {
-                  font-family: 'SF Pro';
+                  font-family: 'SF Pro Display';
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
                   src: url('${("/fonts/SFPRODISPLAYMEDIUM.OTF")}') format('opentype');
                 }
                 @font-face {
-                  font-family: 'SF Pro';
+                  font-family: 'SF Pro Display';
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;

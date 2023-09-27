@@ -55,7 +55,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
         <h1 class="text-[#252D29] font-crimsontext text-2xl font-bold text-center mb-3">
           {formTitle}
         </h1>
-        <p class="text-[#616161] font-sfpro font-normal text-center text-xs">
+        <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs">
           {formSubTitle}
         </p>
       </div>
@@ -63,7 +63,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
       <div class="px-4 flex flex-col justify-center items-center">
         <form class="w-full flex flex-col items-center">
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">
+            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Your complete name
             </label>
             <input
@@ -75,7 +75,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
-            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">
+            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Company website
             </label>
             <input
@@ -87,7 +87,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label class="font-sfpro font-normal w-full text-xs text-[#252D29]">
+            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Email
             </label>
             <input
@@ -101,7 +101,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
         </form>
 
         <button
-          class="font-sfpro font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
+          class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
           onClick={handleFormSubmit}
         >
           Get in touch with us
