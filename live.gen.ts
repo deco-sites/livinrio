@@ -8,12 +8,13 @@ import * as $$$$$0 from "./islands/Accordion.tsx";
 import * as $$$$$1 from "./islands/Footer.tsx";
 import * as $$$$$2 from "./islands/GetInTouch.tsx";
 import * as $$$$$$$$0 from "./sections/Accordion.tsx";
-import * as $$$$$$$$1 from "./sections/Footer.tsx";
-import * as $$$$$$$$2 from "./sections/GetInTouch.tsx";
-import * as $$$$$$$$3 from "./sections/Hero.tsx";
-import * as $$$$$$$$4 from "./sections/ParagraphList.tsx";
-import * as $$$$$$$$5 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$6 from "./sections/Theme.tsx";
+import * as $$$$$$$$1 from "./sections/DataSection.tsx";
+import * as $$$$$$$$2 from "./sections/Footer.tsx";
+import * as $$$$$$$$3 from "./sections/GetInTouch.tsx";
+import * as $$$$$$$$4 from "./sections/Hero.tsx";
+import * as $$$$$$$$5 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$6 from "./sections/SimpleTextList.tsx";
+import * as $$$$$$$$7 from "./sections/Theme.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -173,12 +174,13 @@ const manifest = {
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
     "deco-sites/livinrio/sections/Accordion.tsx": $$$$$$$$0,
-    "deco-sites/livinrio/sections/Footer.tsx": $$$$$$$$1,
-    "deco-sites/livinrio/sections/GetInTouch.tsx": $$$$$$$$2,
-    "deco-sites/livinrio/sections/Hero.tsx": $$$$$$$$3,
-    "deco-sites/livinrio/sections/ParagraphList.tsx": $$$$$$$$4,
-    "deco-sites/livinrio/sections/SimpleTextList.tsx": $$$$$$$$5,
-    "deco-sites/livinrio/sections/Theme.tsx": $$$$$$$$6,
+    "deco-sites/livinrio/sections/DataSection.tsx": $$$$$$$$1,
+    "deco-sites/livinrio/sections/Footer.tsx": $$$$$$$$2,
+    "deco-sites/livinrio/sections/GetInTouch.tsx": $$$$$$$$3,
+    "deco-sites/livinrio/sections/Hero.tsx": $$$$$$$$4,
+    "deco-sites/livinrio/sections/ParagraphList.tsx": $$$$$$$$5,
+    "deco-sites/livinrio/sections/SimpleTextList.tsx": $$$$$$$$6,
+    "deco-sites/livinrio/sections/Theme.tsx": $$$$$$$$7,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
