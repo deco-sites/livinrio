@@ -34,6 +34,7 @@ export default {
       screens: {
         md0: "744px",
         exl: "1440px",
+        xxl: "1920px",
       },
     },
   },
