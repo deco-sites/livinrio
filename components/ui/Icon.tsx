@@ -37,7 +37,9 @@ export type AvailableIcons =
   | "ArrowsPointingOut"
   | "AccordionIconPlus"
   | "AccordionIconPlusDesk"
-  | "AccordionIconLess";
+  | "AccordionIconLess"
+  | "ChevronRightCardDesk"
+  | "ChevronRightCardMobile";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
