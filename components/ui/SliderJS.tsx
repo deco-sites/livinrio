@@ -1,10 +1,12 @@
 import { useEffect } from "preact/hooks";
 
-export interface Props {
+interface Props {
   rootId: string;
   scroll?: "smooth" | "auto";
   interval?: number;
   infinite?: boolean;
+  initialSlide?: number;
+  THRESHOLD?: number;
 }
 
 const ATTRIBUTES = {
@@ -14,10 +16,6 @@ const ATTRIBUTES = {
   'data-slide="next"': 'data-slide="next"',
   "data-dot": "data-dot",
 };
-
-// Percentage of the item that has to be inside the container
-// for it it be considered as inside the container
-const THRESHOLD = 0.6;
 
 const intersectionX = (element: DOMRect, container: DOMRect): number => {
   const delta = container.width / 1_000;
@@ -46,7 +44,9 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
   // deno-lint-ignore no-explicit-any
   typeof (x as any).offsetLeft === "number";
 
-const setup = ({ rootId, scroll, interval, infinite }: Props) => {
+const setup = (
+  { rootId, scroll, interval, infinite, initialSlide, THRESHOLD }: Props,
+) => {
   const root = document.getElementById(rootId);
   const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
   const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
@@ -76,7 +76,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
         sliderRect,
       ) / rect.width;
 
-      if (ratio > THRESHOLD) {
+      if (ratio > THRESHOLD!) {
         indices.push(index);
       }
     }
@@ -96,7 +96,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     }
 
     slider.scrollTo({
-      top: 0,
+      top: item.offsetTop - root.offsetTop,
       behavior: scroll,
       left: item.offsetLeft - root.offsetLeft,
     });
@@ -133,8 +133,10 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
         const dot = dots?.item(index);
 
         if (item.isIntersecting) {
+          item.target.classList.add("slider-current");
           dot?.setAttribute("disabled", "");
         } else {
+          item.target.classList.remove("slider-current");
           dot?.removeAttribute("disabled");
         }
 
@@ -169,6 +171,10 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
   const timeout = interval && setInterval(onClickNext, interval);
 
+  if (initialSlide !== undefined) {
+    goToItem(initialSlide);
+  }
+
   // Unregister callbacks
   return () => {
     for (let it = 0; it < (dots?.length ?? 0); it++) {
@@ -189,13 +195,21 @@ function Slider({
   scroll = "smooth",
   interval,
   infinite = false,
+  initialSlide = 0,
+  THRESHOLD = 0.6, // Percentage of the item that has to be inside the container for it it be considered as inside the container
 }: Props) {
-  useEffect(() => setup({ rootId, scroll, interval, infinite }), [
-    rootId,
-    scroll,
-    interval,
-    infinite,
-  ]);
+  useEffect(
+    () =>
+      setup({ rootId, scroll, interval, infinite, initialSlide, THRESHOLD }),
+    [
+      rootId,
+      scroll,
+      interval,
+      infinite,
+      initialSlide,
+      THRESHOLD,
+    ],
+  );
 
   return <div data-slider-controller-js />;
 }

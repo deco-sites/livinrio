@@ -77,6 +77,45 @@ function GlobalTags() {
                   font-display: swap;
                   src: url('${("/fonts/SFPRODISPLAYREGULAR.OTF")}') format('opentype');
                 }
+                .swiper-container {
+                  width: 100%;
+                  padding-top: 36px;
+                  padding-bottom: 24px;
+                  overflow: hidden;
+                }
+                .swiper-slide {
+                  background-position: center;
+                  background-size: cover;
+                  width: 300px;
+                  height: 300px;
+                }
+                .swiper-pagination-bullet {
+                  width: 4px !important;
+                  height: 4px !important;
+                  background: #616161 !important;
+                }
+                .swiper-pagination-bullet-active {
+                  width: 7.243px !important;
+                  height: 7.243px !important;
+                  background: #94B138 !important;
+                }
+                .swiper-pagination {
+                  position: unset !important;
+                  width: fit-content !important;
+                  display: flex;
+                  align-items: center;
+                }
+                .webkitzada {
+                  display:-webkit-box; 
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp:3;
+                  overflow:hidden;
+                }
+                @media screen and (min-width: 1024px) {
+                  .webkitzada {
+                    display:block;
+                  }
+                }
             `,
         }}
       />
@@ -98,6 +137,12 @@ function GlobalTags() {
         type="image/x-icon"
         href={asset("/favicon-32x32.png")}
       />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
