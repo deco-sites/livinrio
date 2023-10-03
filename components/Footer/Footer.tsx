@@ -8,9 +8,17 @@ export interface Footer {
     width: number;
     height: number;
   }[];
+  footerItems?: {
+    linkText1?: string;
+    text1?: string;
+    linkText2?: string;
+    text2?: string;
+    linkText3?: string;
+    text3?: string;
+  }
 }
 
-export default function Footer({ partners }: Footer) {
+export default function Footer({ partners, footerItems }: Footer) {
   return (
     <div class="">
       <div class="hidden md0:block max-w-[664px] lg:max-w-[656px] mx-auto pt-[56px]">
@@ -35,9 +43,9 @@ export default function Footer({ partners }: Footer) {
       {/*Mobile InfoFooter View*/}
       <div class="lg:hidden max-w-[664px] lg:max-w-[656px] md0:mx-auto pb-3 mt-[52px] flex flex-col mx-4">
         <div class="flex items-center justify-between">
-          <span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
-            Terms
-          </span>
+          <a href={footerItems?.linkText1}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
+            {footerItems?.text1}
+          </span></a>
           <div class="flex flex-col">
             <span class="text-[#252D29] text-[10px] mb-[10px]">Powered by</span>
             {" "}
@@ -45,14 +53,14 @@ export default function Footer({ partners }: Footer) {
           </div>
         </div>
 
-        <span class="text-[#252D29] font-sfprodisplay font-medium text-xs md0:mt-2 mb-0 md0:mb-4">
-          Privacy Policy
-        </span>
+        <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs md0:mt-2 mb-0 md0:mb-4">
+          {footerItems?.text2}
+        </span></a>
 
         <div class="flex items-center justify-between">
-          <span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
-            Cookies
-          </span>
+          <a href={footerItems?.linkText3}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
+            {footerItems?.text3}
+          </span></a>
           <div class="flex flex-col md0:flex-row">
             <span class="text-[#252D29] text-[10px] font-sfprodisplay font-normal">
               © 2023 Copyright.
@@ -72,15 +80,15 @@ export default function Footer({ partners }: Footer) {
           </span>
 
           <div class="flex justify-between items-center">
-            <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
-              Terms
-            </span>
-            <span class="text-[#252D29] font-sfprodisplay font-medium text-sm mx-9">
-              Privacy Policy
-            </span>
-            <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
-              Cookies
-            </span>
+            <a href={footerItems?.linkText1}> <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
+              {footerItems?.text1}
+            </span></a>
+            <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-sm mx-9">
+              {footerItems?.text2}
+            </span></a>
+            <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
+              {footerItems?.text3}
+            </span></a>
           </div>
 
           <div class="flex items-center">
