@@ -50,16 +50,26 @@ export interface HeaderProps {
   search: Search;
 }
 
-function SearchContent({ items, isOpen, handleClose }: Search & { handleClose: () => void, isOpen: boolean; }) {
+function SearchContent(
+  { items, isOpen, handleClose }: Search & {
+    handleClose: () => void;
+    isOpen: boolean;
+  },
+) {
   return (
     <>
       {isOpen &&
         (
           <>
-            <div onClick={handleClose} class="fixed w-full h-full top-0 left-0 "></div>
+            <div
+              onClick={handleClose}
+              class="fixed w-full h-full top-0 left-0 "
+            >
+            </div>
             <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[24.5%] lg:top-[12.5%] exl:top-[5.5%] w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px]">
               <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl px-4 w-full md0:px-[46px] md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[12px] md0:border-[#616161]">
-                <div onClick={handleClose}
+                <div
+                  onClick={handleClose}
                   style="background:rgba(255, 255, 255, 0.60)"
                   class="md0:hidden mx-auto w-[72px] h-[2px] rounded-[4px] mt-2 mb-6"
                 >
@@ -72,7 +82,8 @@ function SearchContent({ items, isOpen, handleClose }: Search & { handleClose: (
                         loading="lazy"
                         width={44}
                         height={40}
-                        className="max-h-[40px] mr-6 md0:mr-0 rounded-lg rounded-r-none exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg" />
+                        className="max-h-[40px] mr-6 md0:mr-0 rounded-lg rounded-r-none exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg"
+                      />
                       <div className="flex flex-col md0:items-center">
                         <h2 class="text-white font-sfprodisplay text-base font-semibold md0:mt-6 md0:mb-3">
                           {find.title}
@@ -84,14 +95,15 @@ function SearchContent({ items, isOpen, handleClose }: Search & { handleClose: (
                     </div>
                   </a>
                 ))}
-                <div onClick={handleClose}
+                <div
+                  onClick={handleClose}
                   style="background:rgba(255, 255, 255, 0.60)"
                   class="md0:hidden mx-auto w-[72px] h-[2px] rounded-[4px] mb-2 mt-6"
                 >
                 </div>
               </div>
-            </div></>
-
+            </div>
+          </>
         )}
     </>
   );
@@ -138,7 +150,9 @@ function BackgroundHeaderImage(
           <Image
             style={{ aspectRatio: `1 / 1` }}
             src={background.image?.bgImage}
+            alt="background blocks"
             width={120}
+            loading="eager"
             className={`${showImage ? `opacity-1` : `opacity-0`
               } transition-opacity duration-200 ease-in-out w-full`}
           />
@@ -149,7 +163,16 @@ function BackgroundHeaderImage(
 }
 
 export default function Header(
-  { background, backgroundDesktopLeftSide, backgroundDesktopRightSide, topText, mainText, subMainTextInitial, subMainTextFinal, search }: HeaderProps,
+  {
+    background,
+    backgroundDesktopLeftSide,
+    backgroundDesktopRightSide,
+    topText,
+    mainText,
+    subMainTextInitial,
+    subMainTextFinal,
+    search,
+  }: HeaderProps,
 ) {
   const [isAmazing, setIsAmazing] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -166,14 +189,22 @@ export default function Header(
 
   return (
     <>
-      <SearchContent items={search.items} isOpen={isOpen} handleClose={() => { setIsOpen(false) }} />
+      <SearchContent
+        items={search.items}
+        isOpen={isOpen}
+        handleClose={() => {
+          setIsOpen(false);
+        }}
+      />
       <header className="bg-[#FCF9EB] md0:flex">
         <div class="opacity-50 grid grid-cols-3 w-full md0:hidden">
           {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
         </div>
 
         <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,128px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] pl-4 pt-4">
-          {backgroundDesktopLeftSide?.map((bg) => <BackgroundHeaderImage background={bg} />)}
+          {backgroundDesktopLeftSide?.map((bg) => (
+            <BackgroundHeaderImage background={bg} />
+          ))}
         </div>
 
         <div className="flex flex-col items-center justify-between pt-10 pb-20 absolute top-0 left-[50%] translate-x-[-50%] h-[615px] md0:h-[466px] lg:h-[624px] exl:h-[900px] xxl:h-[720px]">
@@ -204,7 +235,6 @@ export default function Header(
             </span>
           </div>
 
-
           <button
             onClick={() => {
               setIsOpen(!isOpen);
@@ -224,7 +254,9 @@ export default function Header(
         </div>
 
         <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,128px))] grid-rows-6 w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] pr-4 pt-4 ml-auto">
-          {backgroundDesktopRightSide?.map((bg) => <BackgroundHeaderImage background={bg} />)}
+          {backgroundDesktopRightSide?.map((bg) => (
+            <BackgroundHeaderImage background={bg} />
+          ))}
         </div>
       </header>
     </>

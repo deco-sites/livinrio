@@ -15,7 +15,7 @@ export interface Footer {
     text2?: string;
     linkText3?: string;
     text3?: string;
-  }
+  };
 }
 
 export default function Footer({ partners, footerItems }: Footer) {
@@ -43,9 +43,11 @@ export default function Footer({ partners, footerItems }: Footer) {
       {/*Mobile InfoFooter View*/}
       <div class="lg:hidden max-w-[664px] lg:max-w-[656px] md0:mx-auto pb-3 mt-[52px] flex flex-col mx-4">
         <div class="flex items-center justify-between">
-          <a href={footerItems?.linkText1}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
-            {footerItems?.text1}
-          </span></a>
+          <a href={footerItems?.linkText1}>
+            <span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
+              {footerItems?.text1}
+            </span>
+          </a>
           <div class="flex flex-col">
             <span class="text-[#252D29] text-[10px] mb-[10px]">Powered by</span>
             {" "}
@@ -53,14 +55,18 @@ export default function Footer({ partners, footerItems }: Footer) {
           </div>
         </div>
 
-        <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs md0:mt-2 mb-0 md0:mb-4">
-          {footerItems?.text2}
-        </span></a>
+        <a href={footerItems?.linkText2}>
+          <span class="text-[#252D29] font-sfprodisplay font-medium text-xs md0:mt-2 mb-0 md0:mb-4">
+            {footerItems?.text2}
+          </span>
+        </a>
 
         <div class="flex items-center justify-between">
-          <a href={footerItems?.linkText3}><span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
-            {footerItems?.text3}
-          </span></a>
+          <a href={footerItems?.linkText3}>
+            <span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
+              {footerItems?.text3}
+            </span>
+          </a>
           <div class="flex flex-col md0:flex-row">
             <span class="text-[#252D29] text-[10px] font-sfprodisplay font-normal">
               © 2023 Copyright.
@@ -80,15 +86,21 @@ export default function Footer({ partners, footerItems }: Footer) {
           </span>
 
           <div class="flex justify-between items-center">
-            <a href={footerItems?.linkText1}> <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
-              {footerItems?.text1}
-            </span></a>
-            <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-sm mx-9">
-              {footerItems?.text2}
-            </span></a>
-            <a href={footerItems?.linkText2}><span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
-              {footerItems?.text3}
-            </span></a>
+            <a href={footerItems?.linkText1}>
+              <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
+                {footerItems?.text1}
+              </span>
+            </a>
+            <a href={footerItems?.linkText2}>
+              <span class="text-[#252D29] font-sfprodisplay font-medium text-sm mx-9">
+                {footerItems?.text2}
+              </span>
+            </a>
+            <a href={footerItems?.linkText2}>
+              <span class="text-[#252D29] font-sfprodisplay font-medium text-sm">
+                {footerItems?.text3}
+              </span>
+            </a>
           </div>
 
           <div class="flex items-center">

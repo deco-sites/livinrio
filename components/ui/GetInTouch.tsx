@@ -23,7 +23,6 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
   };
 
   const handleFormSubmit = (e: Event) => {
-
     e.preventDefault();
 
     const baseId = "appZMXlRxzy8FyAbI";
@@ -48,7 +47,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
       .then((response) => response.json())
       .then((responseData) => {
         console.log("Successfully posted data to Airtable:", responseData);
-        setShowSuccessfull(true)
+        setShowSuccessfull(true);
       })
       .catch((error) => {
         console.error("Error posting data to Airtable:", error);
@@ -67,7 +66,10 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
       </div>
 
       <div class="px-4 flex flex-col justify-center items-center">
-        <form onSubmit={handleFormSubmit} class="w-full flex flex-col items-center">
+        <form
+          onSubmit={handleFormSubmit}
+          class="w-full flex flex-col items-center"
+        >
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Your complete name
@@ -76,6 +78,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Fullname"
+              aria-labelledby="Full name"
               value={formData.Fullname}
               onChange={handleInputChange}
               required
@@ -89,6 +92,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="CompanyWebsite"
+              aria-labelledby="Company Website"
               value={formData.CompanyWebsite}
               onChange={handleInputChange}
               required
@@ -102,20 +106,27 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Email"
+              aria-labelledby="E-mail"
               value={formData.Email}
               onChange={handleInputChange}
               required
             />
           </div>
 
-          <button type="submit"
+          <button
+            type="submit"
             class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
           >
             Get in touch with us
           </button>
-          {showSuccessful ? <span class="font-sfprodisplay font-normal w-full text-xs text-[#252D29] max-w-[400px] flex justify-end mt-3">Enviado com sucesso.</span> : null}
+          {showSuccessful
+            ? (
+              <span class="font-sfprodisplay font-normal w-full text-xs text-[#252D29] max-w-[400px] flex justify-end mt-3">
+                Enviado com sucesso.
+              </span>
+            )
+            : null}
         </form>
-
       </div>
     </div>
   );
