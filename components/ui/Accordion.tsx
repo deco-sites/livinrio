@@ -37,7 +37,7 @@ export interface Accordion {
 
 export default function AccordionGroup({ content }: AccordionProps) {
   return (
-    <div class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16">
+    <div id="accordion" class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16">
       {content.map((card) => <Accordion {...card} />)}
     </div>
   );

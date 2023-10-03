@@ -15,7 +15,7 @@ export default function Comments(
 
   return (
     <>
-      <div class="relative pt-[40px] pb-[80px]">
+      <div id="comments" class="relative pt-[40px] pb-[80px]">
         <h1 class="text-center max-w-[316px] mx-auto font-crimsontext text-[32px] font-bold tracking-[-1.92px]">
           {principalTitle}
         </h1>
