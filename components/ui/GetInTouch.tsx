@@ -71,10 +71,11 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           class="w-full flex flex-col items-center"
         >
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label for="fullname" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Your complete name
             </label>
             <input
+              id="fullname"
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Fullname"
@@ -85,10 +86,11 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
-            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label for="companywebsite" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Company website
             </label>
             <input
+              id="companywebsite"
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="CompanyWebsite"
@@ -99,10 +101,11 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label for="email" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Email
             </label>
             <input
+              id="email"
               class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Email"
