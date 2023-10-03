@@ -89,8 +89,8 @@ export default function Comments(
           document.head.appendChild(script);
         }
         
-        handleLoadScript("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js", () => {
-          handleLoadCss("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css");
+        handleLoadScript("/lib/swiper-bundle.min.js", () => {
+          handleLoadCss("/lib/swiper-bundle.min.css");
           var swiper = new Swiper(".swiper-container", {
             effect: "coverflow",
             grabCursor: true,
