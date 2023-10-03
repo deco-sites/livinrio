@@ -66,8 +66,17 @@ export default function Comments(
           </div>
         </div>
       </div>
-      <script defer dangerouslySetInnerHTML={{
-        __html: `
+      <script
+        defer
+        dangerouslySetInnerHTML={{
+          __html: `
+          const handleLoadCss = (styles) => {
+            const style = document.createElement("link");
+            style.href = styles;
+            style.rel = "stylesheet";
+            document.head.appendChild(style);
+          };
+
         const handleLoadScript = (src, onLoadCallback) => {
           const script = document.createElement("script");
           script.src = src;
@@ -81,6 +90,7 @@ export default function Comments(
         }
         
         handleLoadScript("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js", () => {
+          handleLoadCss("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css");
           var swiper = new Swiper(".swiper-container", {
             effect: "coverflow",
             grabCursor: true,
@@ -119,7 +129,10 @@ export default function Comments(
             }
           });        
         })
-      `}}></script>
+      `,
+        }}
+      >
+      </script>
     </>
   );
 }
