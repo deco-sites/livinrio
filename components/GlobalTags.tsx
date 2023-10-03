@@ -16,6 +16,11 @@ function GlobalTags() {
       <link
         rel="preload"
         type="text/css"
+        href={asset("/fonts/CrimsonPro-MediumItalic.ttf")}
+      />
+      <link
+        rel="preload"
+        type="text/css"
         href={asset("/fonts/CrimsonText-Bold.ttf")}
       />
       <link
@@ -42,12 +47,22 @@ function GlobalTags() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+          html {
+            scroll-behavior: smooth;
+          }
                 @font-face {
                   font-family: 'Crimson Pro';
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
                   src: url('${("/fonts/CrimsonPro-Regular.ttf")}') format('truetype');
+                }
+                @font-face {
+                  font-family: 'Crimson Pro';
+                  font-style: italic;
+                  font-weight: 500;
+                  font-display: swap;
+                  src: url('${("/fonts/CrimsonPro-MediumItalic.ttf")}') format('truetype');
                 }
                 @font-face {
                   font-family: 'Crimson Text';
@@ -116,6 +131,13 @@ function GlobalTags() {
                     display:block;
                   }
                 }
+                .searchContent {
+                  background:rgba(255, 255, 255, 0.05);
+                }
+
+                .searchContent:hover {
+                  background:rgba(255, 255, 255, 0.1);
+                }
             `,
         }}
       />
@@ -141,8 +163,8 @@ function GlobalTags() {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
       />
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
+      </script>
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />

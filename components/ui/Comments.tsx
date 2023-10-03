@@ -12,39 +12,39 @@ export interface Props {
 export default function Comments(
   { principalTitle, sliderContent }: Props,
 ) {
-
   return (
     <>
-      <div class="relative pt-[40px] pb-[80px]">
+      <div id="comments" class="relative pt-[40px] pb-[80px]">
         <h1 class="text-center max-w-[316px] mx-auto font-crimsontext text-[32px] font-bold tracking-[-1.92px]">
           {principalTitle}
         </h1>
 
-        <div class="hidden lg:block absolute right-[3%] top-[-20%]"><Icon
-          id="SliderAspasDesk"
-          width={287}
-          height={290}
-        />
+        <div class="hidden lg:block absolute right-[3%] top-[-20%]">
+          <Icon
+            id="SliderAspasDesk"
+            width={287}
+            height={290}
+          />
         </div>
-        <div class="absolute right-[3%] top-[-6%] lg:hidden"><Icon
-          id="SliderAspasMobile"
-          width={63}
-          height={63}
-        />
+        <div class="absolute right-[3%] top-[-6%] lg:hidden">
+          <Icon
+            id="SliderAspasMobile"
+            width={63}
+            height={63}
+          />
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             {sliderContent?.map((props, index) => (
-              <div
-                class="swiper-slide min-w-[292px] max-w-[292px] lg:min-w-[566px] lg:max-w-[566px]"
-              >
-                <div style="box-shadow:0px 0px 12px 0px rgba(0, 0, 0, 0.20);" class="min-h-[145px] lg:min-h-[281px] bg-white rounded-lg shadow-xl flex flex-col justify-center px-3 py-4 exl:px-10">
+              <div class="swiper-slide min-w-[292px] max-w-[292px] lg:min-w-[566px] lg:max-w-[566px]">
+                <div
+                  style="box-shadow:0px 0px 12px 0px rgba(0, 0, 0, 0.20);"
+                  class="min-h-[145px] lg:min-h-[281px] bg-white rounded-lg shadow-xl flex flex-col justify-center px-3 py-4 exl:px-10"
+                >
                   <span class="font-sfprodisplay font-medium text-xs exl:text-base text-[#252D29] exl:text-black exl:mb-1">
                     {props.title}
                   </span>
-                  <span
-                    class="font-sfprodisplay text-xs exl:text-sm my-1 text-[#616161] webkitzada"
-                  >
+                  <span class="font-sfprodisplay text-xs exl:text-sm my-1 text-[#616161] webkitzada">
                     {props.contentText}
                   </span>
                   <span class="font-sfprodisplay text-xs font-medium text-[#EB6424] exl:mt-3">
@@ -65,10 +65,10 @@ export default function Comments(
             </button>
           </div>
         </div>
-
       </div>
-      <script dangerouslySetInnerHTML={{
-        __html: `
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
         var swiper = new Swiper(".swiper-container", {
           effect: "coverflow",
           grabCursor: true,
@@ -106,7 +106,10 @@ export default function Comments(
             }
           }
         });        
-      `}}></script>
+      `,
+        }}
+      >
+      </script>
     </>
   );
 }

@@ -7,7 +7,10 @@ export interface SectionData {
 }
 export default function DataSection({ title, datas }: SectionData) {
   return (
-    <div class="bg-[#BABD8D] rounded-[40px] flex flex-col justify-center items-center pt-[38px] pb-10 mb-[40px] md0:pt-[66px] md0:pb-[82px] md0:mb-[66px] lg:pt-[96px] lg:pb-[128px] lg:mb-[109px] exl:pt-[172px] exl:pb-[204px] exl:mb-[128px]">
+    <div
+      id="data"
+      class="bg-[#BABD8D] rounded-[40px] flex flex-col justify-center items-center pt-[38px] pb-10 mb-[40px] md0:pt-[66px] md0:pb-[82px] md0:mb-[66px] lg:pt-[96px] lg:pb-[128px] lg:mb-[109px] exl:pt-[172px] exl:pb-[204px] exl:mb-[128px]"
+    >
       <h1 class="text-[32px] text-[#252D29] font-bold font-crimsontext leading-[38px] text-center max-w-[222px] mb-[22px] tracking-[-1.28px] relative z-[1] md0:max-w-[321px] md0:mb-[33px] lg:text-[40px] lg:max-w-none lg:leading-[48px] lg:mb-[64px] exl:text-[64px] exl:leading-[76px] exl:mb-[96px]">
         <div class="absolute bg-white w-[140px] h-[34px] rotate-[-3.40deg] z-[-1] left-[-8.4px] md0:h-[38px] md0:top-[5px] lg:w-[176px] lg:h-[44px] exl:w-[270px] exl:h-[68px] xxl:w-[284px]">
         </div>

@@ -43,7 +43,10 @@ export type AvailableIcons =
   | "ChevronLeftSliderMobile"
   | "ChevronRightSliderMobile"
   | "SliderAspasDesk"
-  | "SliderAspasMobile";
+  | "SliderAspasMobile"
+  | "HeaderMiniIconMobile"
+  | "FindIcon"
+  | "LivinRioIcon";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
