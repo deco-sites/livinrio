@@ -6,6 +6,8 @@ export interface form {
 }
 
 export default function GetInTouch({ formTitle, formSubTitle }: form) {
+  const [showSuccessful, setShowSuccessfull] = useState(false);
+
   const [formData, setFormData] = useState({
     Fullname: "",
     CompanyWebsite: "",
@@ -20,7 +22,10 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
     });
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e: Event) => {
+
+    e.preventDefault();
+
     const baseId = "appZMXlRxzy8FyAbI";
     const tableId = "tblq8nQIS4eLVlAiJ";
     const apiKey =
@@ -43,6 +48,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
       .then((response) => response.json())
       .then((responseData) => {
         console.log("Successfully posted data to Airtable:", responseData);
+        setShowSuccessfull(true)
       })
       .catch((error) => {
         console.error("Error posting data to Airtable:", error);
@@ -61,7 +67,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
       </div>
 
       <div class="px-4 flex flex-col justify-center items-center">
-        <form class="w-full flex flex-col items-center">
+        <form onSubmit={handleFormSubmit} class="w-full flex flex-col items-center">
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
               Your complete name
@@ -72,6 +78,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               name="Fullname"
               value={formData.Fullname}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
@@ -84,6 +91,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               name="CompanyWebsite"
               value={formData.CompanyWebsite}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center">
@@ -96,16 +104,18 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
               name="Email"
               value={formData.Email}
               onChange={handleInputChange}
+              required
             />
           </div>
+
+          <button type="submit"
+            class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
+          >
+            Get in touch with us
+          </button>
+          {showSuccessful ? <span class="font-sfprodisplay font-normal w-full text-xs text-[#252D29] max-w-[400px] flex justify-end mt-3">Enviado com sucesso.</span> : null}
         </form>
 
-        <button
-          class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
-          onClick={handleFormSubmit}
-        >
-          Get in touch with us
-        </button>
       </div>
     </div>
   );

@@ -45,6 +45,8 @@ export interface HeaderProps {
   backgroundDesktopRightSide: BackgroundHeader[];
   topText: string;
   mainText: string;
+  subMainTextInitial: string;
+  subMainTextFinal: string;
   search: Search;
 }
 
@@ -147,7 +149,7 @@ function BackgroundHeaderImage(
 }
 
 export default function Header(
-  { background, backgroundDesktopLeftSide, backgroundDesktopRightSide, topText, mainText, search }: HeaderProps,
+  { background, backgroundDesktopLeftSide, backgroundDesktopRightSide, topText, mainText, subMainTextInitial, subMainTextFinal, search }: HeaderProps,
 ) {
   const [isAmazing, setIsAmazing] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -198,7 +200,7 @@ export default function Header(
             <span
               className={`font-crimsonpro text-[#7C6A0A] text-right text-[24px] lg:text-[32px] exl:text-[64px] font-medium italic`}
             >
-              {isAmazing ? "is amazing" : "is fun"}
+              {isAmazing ? `${subMainTextFinal}` : `${subMainTextInitial}`}
             </span>
           </div>
 
