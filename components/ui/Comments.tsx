@@ -66,52 +66,60 @@ export default function Comments(
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
-      </script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        var swiper = new Swiper(".swiper-container", {
-          effect: "coverflow",
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          centeredSlides: true,
-          initialSlide: 2,
-          navigation: {
-            nextEl: ".comments-button-next",
-            prevEl: ".comments-button-prev"
-          },
-          coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 10,
-            initialSlide: 3,
-            slideShadows: false
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-          },
-          breakpoints: {
-            1024: {
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 60,
-                depth: 80,
-                modifier: 5,
-                scale: 1,
-                initialSlide: 3,
-                slideShadows: false,
+      <script defer dangerouslySetInnerHTML={{
+        __html: `
+        const handleLoadScript = (src, onLoadCallback) => {
+          const script = document.createElement("script");
+          script.src = src;
+          script.async = true;
+        
+          script.onload = () => {
+            onLoadCallback();
+          };
+        
+          document.head.appendChild(script);
+        }
+        
+        handleLoadScript("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js", () => {
+          var swiper = new Swiper(".swiper-container", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            centeredSlides: true,
+            initialSlide: 2,
+            navigation: {
+              nextEl: ".comments-button-next",
+              prevEl: ".comments-button-prev"
+            },
+            coverflowEffect: {
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 10,
+              initialSlide: 3,
+              slideShadows: false
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true
+            },
+            breakpoints: {
+              1024: {
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 60,
+                  depth: 80,
+                  modifier: 5,
+                  scale: 1,
+                  initialSlide: 3,
+                  slideShadows: false,
+                }
               }
             }
-          }
-        });        
-      `,
-        }}
-      >
-      </script>
+          });        
+        })
+      `}}></script>
     </>
   );
 }
