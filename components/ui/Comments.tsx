@@ -66,7 +66,8 @@ export default function Comments(
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
+      </script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
