@@ -34,14 +34,16 @@ function GlobalTags() {
         href={asset("/fonts/PP-Hatton-Medium.ttf")}
       />
       <link
+        as="font"
         rel="preload"
-        type="text/css"
-        href={asset("/fonts/sfprodisplayDISPLAYMEDIUM.OTF")}
+        type="font/woff"
+        href={asset("/fonts/SFPRODISPLAYMEDIUM.woff")}
       />
       <link
+        as="font"
         rel="preload"
-        type="text/css"
-        href={asset("/fonts/sfprodisplayDISPLAYREGULAR.OTF")}
+        type="font/woff"
+        href={asset("/fonts/SFPRODISPLAYREGULAR.woff")}
       />
 
       <style
@@ -83,14 +85,14 @@ function GlobalTags() {
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYMEDIUM.OTF")}') format('opentype');
+                  src: url('${("/fonts/SFPRODISPLAYMEDIUM.woff")}') format('woff');
                 }
                 @font-face {
                   font-family: 'SF Pro Display';
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYREGULAR.OTF")}') format('opentype');
+                  src: url('${("/fonts/SFPRODISPLAYREGULAR.woff")}') format('woff');
                 }
                 .swiper-container {
                   width: 100%;
