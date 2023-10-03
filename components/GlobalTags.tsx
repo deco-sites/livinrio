@@ -131,6 +131,13 @@ function GlobalTags() {
                     display:block;
                   }
                 }
+                .searchContent {
+                  background:rgba(255, 255, 255, 0.05);
+                }
+
+                .searchContent:hover {
+                  background:rgba(255, 255, 255, 0.1);
+                }
             `,
         }}
       />
@@ -156,8 +163,8 @@ function GlobalTags() {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
       />
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
+      </script>
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
