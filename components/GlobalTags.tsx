@@ -161,10 +161,6 @@ function GlobalTags() {
         type="image/x-icon"
         href={asset("/favicon-32x32.png")}
       />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-      />
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
