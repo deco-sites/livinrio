@@ -8,92 +8,12 @@ function GlobalTags() {
 
       {/* Prefetch fonts */}
 
-      <link
-        rel="preload"
-        type="text/css"
-        href={asset("/fonts/CrimsonPro-Regular.ttf")}
-      />
-      <link
-        rel="preload"
-        type="text/css"
-        href={asset("/fonts/CrimsonPro-MediumItalic.ttf")}
-      />
-      <link
-        rel="preload"
-        type="text/css"
-        href={asset("/fonts/CrimsonText-Bold.ttf")}
-      />
-      <link
-        rel="preload"
-        type="text/css"
-        href={asset("/fonts/CrimsonText-Bold.ttf")}
-      />
-      <link
-        rel="preload"
-        type="text/css"
-        href={asset("/fonts/PP-Hatton-Medium.ttf")}
-      />
-      <link
-        as="font"
-        rel="preload"
-        type="font/woff"
-        href={asset("/fonts/SFPRODISPLAYMEDIUM.woff")}
-      />
-      <link
-        as="font"
-        rel="preload"
-        type="font/woff"
-        href={asset("/fonts/SFPRODISPLAYREGULAR.woff")}
-      />
-
       <style
         dangerouslySetInnerHTML={{
           __html: `
           html {
             scroll-behavior: smooth;
           }
-                @font-face {
-                  font-family: 'Crimson Pro';
-                  font-style: normal;
-                  font-weight: 400;
-                  font-display: swap;
-                  src: url('${("/fonts/CrimsonPro-Regular.ttf")}') format('truetype');
-                }
-                @font-face {
-                  font-family: 'Crimson Pro';
-                  font-style: italic;
-                  font-weight: 500;
-                  font-display: swap;
-                  src: url('${("/fonts/CrimsonPro-MediumItalic.ttf")}') format('truetype');
-                }
-                @font-face {
-                  font-family: 'Crimson Text';
-                  font-style: normal;
-                  font-weight: 700;
-                  font-display: swap;
-                  src: url('${("/fonts/CrimsonText-Bold.ttf")}') format('truetype');
-                }
-                @font-face {
-                  font-family: 'PP Hatton';
-                  font-style: normal;
-                  font-weight: 500;
-                  font-display: swap;
-                  src: url('${("/fonts/PP-Hatton-Medium.ttf")}') format('truetype');
-                }
-                @font-face {
-                  font-family: 'SF Pro Display';
-                  font-style: normal;
-                  font-weight: 500;
-                  font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYMEDIUM.woff")}') format('woff');
-                }
-                @font-face {
-                  font-family: 'SF Pro Display';
-                  font-style: normal;
-                  font-weight: 400;
-                  font-display: swap;
-                  src: url('${("/fonts/SFPRODISPLAYREGULAR.woff")}') format('woff');
-                }
                 .swiper-container {
                   width: 100%;
                   padding-top: 36px;
