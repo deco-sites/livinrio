@@ -32,10 +32,13 @@ export interface BackgroundHeader {
    * @description background-color, ps: you should always pick a color
    */
   color?: string;
-  topLeftBorder?: number;
-  topRightBorder?: number;
-  bottomLeftBorder?: number;
-  bottomRightBorder?: number;
+  /**
+   * @description Choose where the border effect should be applied
+   */
+  topLeftBorder?: boolean;
+  topRightBorder?: boolean;
+  bottomLeftBorder?: boolean;
+  bottomRightBorder?: boolean;
   image?: BackgroundImageHeader;
 }
 
@@ -63,10 +66,11 @@ function SearchContent(
           <>
             <div
               onClick={handleClose}
+              style="background: rgba(252, 249, 235, 0.40);"
               class="fixed w-full h-full top-0 left-0 "
             >
             </div>
-            <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[24.5%] lg:top-[12.5%] exl:top-[5.5%] w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px]">
+            <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[20%] lg:top-[31%] exl:top-[56%] xxl:top-[62%] w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px]">
               <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl px-4 w-full md0:px-[46px] md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[12px] md0:border-[#616161]">
                 <div
                   onClick={handleClose}
@@ -136,10 +140,10 @@ function BackgroundHeaderImage(
     <div
       style={{
         backgroundColor: `${background.color}`,
-        borderTopLeftRadius: `${background.topLeftBorder}px`,
-        borderTopRightRadius: `${background.topRightBorder}px`,
-        borderBottomLeftRadius: `${background.bottomLeftBorder}px`,
-        borderBottomRightRadius: `${background.bottomRightBorder}px`,
+        borderTopLeftRadius: `${background.topLeftBorder ? `50%` : ''}`,
+        borderTopRightRadius: `${background.topRightBorder ? `50%` : ''}`,
+        borderBottomLeftRadius: `${background.bottomLeftBorder ? `50%` : ''}`,
+        borderBottomRightRadius: `${background.bottomRightBorder ? `50%` : ''}`,
         backgroundSize: `100% 100%`,
         backgroundRepeat: `no-repeat`,
       }}
@@ -153,9 +157,8 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             loading="eager"
-            className={`${
-              showImage ? `opacity-1` : `opacity-0`
-            } transition-opacity duration-200 ease-in-out w-full`}
+            className={`${showImage ? `opacity-1` : `opacity-0`
+              } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : ""}
@@ -197,18 +200,18 @@ export default function Header(
           setIsOpen(false);
         }}
       />
-      <header className="bg-[#FCF9EB] md0:flex">
+      <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20">
         <div class="opacity-50 grid grid-cols-3 w-full md0:hidden">
           {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
         </div>
 
-        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,128px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] pl-4 pt-4">
+        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
           {backgroundDesktopLeftSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between pt-10 pb-20 absolute top-0 left-[50%] translate-x-[-50%] h-[615px] md0:h-[466px] lg:h-[624px] exl:h-[900px] xxl:h-[720px]">
+        <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto">
           <div className="flex items-center">
             <span className="text-[#7C6A0A] font-sfprodisplay font-extrabold text-[10px] tracking-[6.8px] mr-3">
               {topText}
@@ -219,8 +222,8 @@ export default function Header(
               height={12}
             />
           </div>
-          <div className="flex flex-col relative">
-            <span className="font-pphatton text-[#7C6A0A] text-7xl md0:text-[84px] lg:text-[112px] exl:text-[160px] font-medium tracking-[-7.172px]">
+          <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
+            <span className="font-pphatton text-[#7C6A0A] text-7xl md0:text-[84px] lg:text-[112px] exl:text-[160px] font-medium tracking-[-7.172px] md0:tracking-[-8.4px] lg:tracking-[-11.2px] exl:tracking-[-16px] xxl:tracking-[-22.4px]">
               {mainText}
             </span>
             <Icon
@@ -230,7 +233,7 @@ export default function Header(
               class="absolute top-[-40px] right-[-25px]"
             />
             <span
-              className={`font-crimsonpro text-[#7C6A0A] text-right text-[24px] lg:text-[32px] exl:text-[64px] font-medium italic`}
+              className={`font-crimsonpro text-[#7C6A0A] text-right  text-[24px] lg:text-[32px] exl:text-[64px] font-medium italic`}
             >
               {isAmazing ? `${subMainTextFinal}` : `${subMainTextInitial}`}
             </span>
@@ -241,7 +244,7 @@ export default function Header(
               setIsOpen(!isOpen);
             }}
             style={{ boxShadow: "0px 0px 11.38419px 0px rgba(0, 0, 0, 0.10)" }}
-            className="bg-[#413703] rounded-lg h-[48px] flex items-center px-6"
+            className="bg-[#413703] rounded-lg exl:rounded-2xl h-[48px] exl:h-[72px] flex items-center px-6 exl:px-8"
           >
             <Icon
               id="FindIcon"
@@ -254,7 +257,7 @@ export default function Header(
           </button>
         </div>
 
-        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,128px))] grid-rows-6 w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] pr-4 pt-4 ml-auto">
+        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] mr-4 mt-4 ml-auto lg:mr-6 lg:mt-6 exl:mr-8 exl:mt-8 xxl:mr-12 xxl:ml-12">
           {backgroundDesktopRightSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
           ))}
