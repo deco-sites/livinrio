@@ -37,7 +37,7 @@ export interface Accordion {
 
 export default function AccordionGroup({ content }: AccordionProps) {
   return (
-    <div id="accordion" class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16">
+    <div id="accordion" class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16 xxl:py-24">
       {content.map((card) => <Accordion {...card} />)}
     </div>
   );
@@ -69,8 +69,8 @@ function Accordion(
         <div class="bg-[#BABD8D80] exl:hover:bg-[#BABD8D] mb-4 rounded-lg">
           <div
             className={`cursor-pointer flex items-center pl-5 exl:py-8 h-[48px] rounded-md font-sfprodisplay font-medium ${open
-                ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
-                : "bg-[#BABD8D80]"
+              ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
+              : "bg-[#BABD8D80]"
               }`}
             onClick={() => setOpen(!open)}
           >
@@ -98,8 +98,8 @@ function Accordion(
                   {categories?.map((category) => (
                     <span
                       class={`rounded-[51px] bg-[#4137031a] px-3 py-2 border-solid font-sfprodisplay text-xs font-medium text-[#252D29] ${selectedCategory === category
-                          ? "border-[1px] border-[#41370366]"
-                          : ""
+                        ? "border-[1px] border-[#41370366]"
+                        : ""
                         }`}
                       onClick={() => setSelectedCategory(category)}
                     >

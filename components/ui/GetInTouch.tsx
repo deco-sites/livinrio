@@ -71,7 +71,10 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           class="w-full flex flex-col items-center"
         >
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label for="fullname" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label
+              for="fullname"
+              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+            >
               Your complete name
             </label>
             <input
@@ -86,7 +89,10 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
-            <label for="companywebsite" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label
+              for="companywebsite"
+              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+            >
               Company website
             </label>
             <input
@@ -101,7 +107,10 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
             />
           </div>
           <div class="w-full max-w-[400px] flex flex-col items-center">
-            <label for="email" class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]">
+            <label
+              for="email"
+              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+            >
               Email
             </label>
             <input
