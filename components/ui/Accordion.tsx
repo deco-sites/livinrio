@@ -37,7 +37,7 @@ export interface Accordion {
 
 export default function AccordionGroup({ content }: AccordionProps) {
   return (
-    <div id="accordion" class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16">
+    <div id="accordion" class="bg-[#FCF9EB] pb-8 pt-12 lg:pb-16 xxl:py-24">
       {content.map((card) => <Accordion {...card} />)}
     </div>
   );
@@ -62,18 +62,16 @@ function Accordion(
 
   return (
     <div
-      className={`mx-4 md0:mx-10 max-w-[1430px] exl:mx-auto ${
-        open ? "pb-4" : "pb-0"
-      }`}
+      className={`mx-4 md0:mx-10 max-w-[1430px] exl:mx-auto ${open ? "pb-4" : "pb-0"
+        }`}
     >
       <>
         <div class="bg-[#BABD8D80] exl:hover:bg-[#BABD8D] mb-4 rounded-lg">
           <div
-            className={`cursor-pointer flex items-center pl-5 exl:py-8 h-[48px] rounded-md font-sfprodisplay font-medium ${
-              open
-                ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
-                : "bg-[#BABD8D80]"
-            }`}
+            className={`cursor-pointer flex items-center pl-5 exl:py-8 h-[48px] rounded-md font-sfprodisplay font-medium ${open
+              ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
+              : "bg-[#BABD8D80]"
+              }`}
             onClick={() => setOpen(!open)}
           >
             <div class="hidden exl:block">
@@ -92,19 +90,17 @@ function Accordion(
             className={`exl:max-h-[598px]`}
           >
             <div
-              className={`${
-                open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
-              } flex flex-col max-w-[1110px] exl:mx-auto px-5 exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
+              className={`${open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
+                } flex flex-col max-w-[1110px] exl:mx-auto px-5 exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
             >
               {categories && (
                 <div class="hidden cursor-pointer exl:flex gap-4 mt-10 mb-[24px]">
                   {categories?.map((category) => (
                     <span
-                      class={`rounded-[51px] bg-[#4137031a] px-3 py-2 border-solid font-sfprodisplay text-xs font-medium text-[#252D29] ${
-                        selectedCategory === category
-                          ? "border-[1px] border-[#41370366]"
-                          : ""
-                      }`}
+                      class={`rounded-[51px] bg-[#4137031a] px-3 py-2 border-solid font-sfprodisplay text-xs font-medium text-[#252D29] ${selectedCategory === category
+                        ? "border-[1px] border-[#41370366]"
+                        : ""
+                        }`}
                       onClick={() => setSelectedCategory(category)}
                     >
                       {category}

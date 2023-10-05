@@ -70,7 +70,7 @@ function SearchContent(
               class="fixed w-full h-full top-0 left-0 "
             >
             </div>
-            <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:bottom-[60px] exl:bottom-20 w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px] md0:min-w-[652px] lg:min-w-[848px] exl:min-w-[1012px]">
+            <div class="w-full fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[100px] lg:top-[156px] exl:top-[272px] xxl:top-[360px] md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px] md0:min-w-[652px] lg:min-w-[848px] exl:min-w-[1012px]">
               <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl px-4 w-full md0:px-[46px] md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[12px] md0:border-[#616161]">
                 <div
                   onClick={handleClose}
@@ -202,7 +202,7 @@ export default function Header(
           }}
         />
       </div>
-      <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20">
+      <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
         <div class="opacity-50 grid grid-cols-3 w-full md0:hidden">
           {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
         </div>
@@ -241,15 +241,6 @@ export default function Header(
             </span>
           </div>
 
-          <div class="hidden md0:block">
-            <SearchContent
-              items={search.items}
-              isOpen={isOpen}
-              handleClose={() => {
-                setIsOpen(false);
-              }}
-            />
-          </div>
           <button
             onClick={() => {
               setIsOpen(!isOpen);
@@ -268,6 +259,15 @@ export default function Header(
           </button>
         </div>
 
+        <div class="hidden md0:block">
+          <SearchContent
+            items={search.items}
+            isOpen={isOpen}
+            handleClose={() => {
+              setIsOpen(false);
+            }}
+          />
+        </div>
         <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] mr-4 mt-4 ml-auto lg:mr-6 lg:mt-6 exl:mr-8 exl:mt-8 xxl:mr-12 xxl:ml-12">
           {backgroundDesktopRightSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
