@@ -70,7 +70,7 @@ function SearchContent(
               class="fixed w-full h-full top-0 left-0 "
             >
             </div>
-            <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[20%] lg:top-[31%] exl:top-[56%] xxl:top-[62%] w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px]">
+            <div class="fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:bottom-[60px] exl:bottom-20 w-full md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px] md0:min-w-[652px] lg:min-w-[848px] exl:min-w-[1012px]">
               <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl px-4 w-full md0:px-[46px] md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[12px] md0:border-[#616161]">
                 <div
                   onClick={handleClose}
@@ -140,10 +140,10 @@ function BackgroundHeaderImage(
     <div
       style={{
         backgroundColor: `${background.color}`,
-        borderTopLeftRadius: `${background.topLeftBorder ? `50%` : ''}`,
-        borderTopRightRadius: `${background.topRightBorder ? `50%` : ''}`,
-        borderBottomLeftRadius: `${background.bottomLeftBorder ? `50%` : ''}`,
-        borderBottomRightRadius: `${background.bottomRightBorder ? `50%` : ''}`,
+        borderTopLeftRadius: `${background.topLeftBorder ? `50%` : ""}`,
+        borderTopRightRadius: `${background.topRightBorder ? `50%` : ""}`,
+        borderBottomLeftRadius: `${background.bottomLeftBorder ? `50%` : ""}`,
+        borderBottomRightRadius: `${background.bottomRightBorder ? `50%` : ""}`,
         backgroundSize: `100% 100%`,
         backgroundRepeat: `no-repeat`,
       }}
@@ -193,13 +193,15 @@ export default function Header(
 
   return (
     <>
-      <SearchContent
-        items={search.items}
-        isOpen={isOpen}
-        handleClose={() => {
-          setIsOpen(false);
-        }}
-      />
+      <div class="md0:hidden">
+        <SearchContent
+          items={search.items}
+          isOpen={isOpen}
+          handleClose={() => {
+            setIsOpen(false);
+          }}
+        />
+      </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20">
         <div class="opacity-50 grid grid-cols-3 w-full md0:hidden">
           {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
@@ -239,6 +241,15 @@ export default function Header(
             </span>
           </div>
 
+          <div class="hidden md0:block">
+            <SearchContent
+              items={search.items}
+              isOpen={isOpen}
+              handleClose={() => {
+                setIsOpen(false);
+              }}
+            />
+          </div>
           <button
             onClick={() => {
               setIsOpen(!isOpen);
