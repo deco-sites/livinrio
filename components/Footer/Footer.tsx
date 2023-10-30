@@ -41,7 +41,7 @@ export default function Footer({ partners, footerItems }: Footer) {
       </div>
 
       {/*Mobile InfoFooter View*/}
-      <div class="lg:hidden max-w-[664px] lg:max-w-[656px] md0:mx-auto pb-3 mt-[52px] flex flex-col mx-4">
+      <div class="lg:hidden max-w-[664px] lg:max-w-[656px] md0:mx-auto pb-3 mt-14 md0:mt-16 flex flex-col mx-4">
         <div class="flex items-center justify-between">
           <a href={footerItems?.linkText1}>
             <span class="text-[#252D29] font-sfprodisplay font-medium text-xs">
@@ -68,10 +68,10 @@ export default function Footer({ partners, footerItems }: Footer) {
             </span>
           </a>
           <div class="flex flex-col md0:flex-row">
-            <span class="text-[#252D29] text-[10px] font-sfprodisplay font-normal">
+            <span class="text-[#252D29] text-[10px] leading-[15px] font-sfprodisplay font-normal">
               © 2023 Copyright.
             </span>{" "}
-            <span class="text-[#252D29] text-[10px] font-sfprodisplay font-normal">
+            <span class="text-[#252D29] text-[10px] leading-[15px] font-sfprodisplay font-normal">
               All Rights Reserved.
             </span>
           </div>

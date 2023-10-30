@@ -48,8 +48,7 @@ export interface HeaderProps {
   backgroundDesktopRightSide: BackgroundHeader[];
   topText: string;
   mainText: string;
-  subMainTextInitial: string;
-  subMainTextFinal: string;
+  subMainTexts: string[];
   search: Search;
 }
 
@@ -67,32 +66,44 @@ function SearchContent(
             <div
               onClick={handleClose}
               style="background: rgba(252, 249, 235, 0.40);"
-              class="fixed w-full h-full top-0 left-0 "
+              class="fixed w-full h-full top-0 left-0 z-[5]"
             >
             </div>
-            <div class="w-full fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[100px] lg:top-[156px] exl:top-[272px] xxl:top-[360px] md0:max-w-[652px] lg:max-w-[848px] exl:max-w-[1012px] md0:min-w-[652px] lg:min-w-[848px] exl:min-w-[1012px]">
-              <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl px-4 w-full md0:px-[46px] md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[12px] md0:border-[#616161]">
+            <div class="w-full fixed bottom-0 z-10 md0:absolute md0:left-[50%] md0:translate-x-[-50%] md0:top-[100px] lg:top-[148px] exl:top-[272px] xxl:top-[360px] md0:max-w-[664px] lg:max-w-[848px] exl:max-w-[1012px] md0:min-w-[664px] lg:min-w-[848px] exl:min-w-[1012px]">
+              <Icon
+                id="CloseSearchIcon"
+                width={24}
+                height={24}
+                class="absolute right-0 top-[-28px]"
+                onClick={handleClose}
+              />
+              <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl exl:rounded-2xl px-4 w-full md0:py-4 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[8px] md0:border-[#616161]">
                 <div
                   onClick={handleClose}
                   style="background:rgba(255, 255, 255, 0.60)"
-                  class="md0:hidden mx-auto w-[72px] h-[2px] rounded-[4px] mt-2 mb-6"
+                  class="md0:hidden mx-auto w-[72px] h-[2px] rounded-[4px] mt-2 mb-[14px]"
                 >
                 </div>
                 {items.map((find) => (
                   <a href={find.redirectTo}>
-                    <div className="searchContent h-full flex md0:flex-col md0:min-w-[194px] lg:min-w-[245px] exl:min-w-[306px] justify-center items-center rounded-2xl min-h-[103px] pr-6 pl-10 md0:p-0">
+                    <div className="searchContent h-full flex md0:flex-col md0:min-w-[194px] lg:min-w-[245px] exl:min-w-[306px] justify-center items-center rounded-2xl min-h-[103px] md0:min-h-[224px] px-6 md0:p-0">
                       <Image
                         src={find.image}
                         loading="lazy"
-                        width={44}
-                        height={40}
-                        className="max-h-[40px] mr-6 md0:mr-0 rounded-lg rounded-r-none exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg"
+                        width={48}
+                        className="mr-6 md0:mr-0 rounded-lg rounded-r-none exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg exl:hidden"
+                      />
+                      <Image
+                        src={find.image}
+                        loading="lazy"
+                        width={96}
+                        className="mr-6 md0:mr-0 rounded-lg rounded-r-none exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg hidden exl:block"
                       />
                       <div className="flex flex-col md0:items-center">
-                        <h2 class="text-white font-sfprodisplay text-base font-semibold md0:mt-6 md0:mb-3">
+                        <h2 class="text-white font-sfprodisplay text-base lg:text-2xl font-semibold md0:mt-6 md0:mb-3 exl:mt-8 exl:mb-6">
                           {find.title}
                         </h2>
-                        <span class="text-white font-sfprodisplay text-xs font-normal md0:max-w-[146px] md0:text-center">
+                        <span class="text-white font-sfprodisplay text-xs lg:text-base md0:leading-[100%] font-normal md0:max-w-[146px] md0:text-center">
                           {find.contentText}
                         </span>
                       </div>
@@ -173,23 +184,41 @@ export default function Header(
     backgroundDesktopRightSide,
     topText,
     mainText,
-    subMainTextInitial,
-    subMainTextFinal,
+    subMainTexts,
     search,
   }: HeaderProps,
 ) {
-  const [isAmazing, setIsAmazing] = useState(false);
+  const [isText, setIsText] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [textClass, setTextClass] = useState("fade-in");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsAmazing(true);
-    }, 3000);
+      if (subMainTexts.length > 1) {
+        if (isText === subMainTexts.length - 1) {
+          clearTimeout(timer);
+          return
+        }
+        setTextClass("fade-out")
+      }
+    }, 800);
 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [isText]);
+
+  useEffect(() => {
+    if (textClass === "fade-out") {
+      setTimeout(() => {
+        setTextClass("fade-in");
+        setIsText((prevText) => {
+          return prevText + 1
+        })
+      }, 150);
+    }
+  }, [textClass])
+
 
   return (
     <>
@@ -203,41 +232,85 @@ export default function Header(
         />
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
-        <div class="opacity-50 grid grid-cols-3 w-full md0:hidden">
+        <div class="opacity-[30%] grid grid-cols-3 w-full md0:hidden">
           {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
         </div>
 
-        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
+        <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
           {backgroundDesktopLeftSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
           ))}
+          <Icon
+            id="LivinRioBgStar"
+            width={24}
+            height={32}
+            class="hidden md0:block lg:hidden absolute top-[48%] translate-y-[-50%] left-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarLg"
+            width={32}
+            height={40}
+            class="hidden lg:block exl:hidden absolute top-[48%] translate-y-[-50%] left-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarXl"
+            width={48}
+            height={56}
+            class="hidden exl:block xxl:hidden absolute top-[49%] translate-y-[-50%] left-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarXl"
+            width={48}
+            height={56}
+            class="hidden xxl:block absolute top-[50%] translate-y-[-50%] left-[28%]"
+          />
         </div>
 
-        <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto">
+
+        <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto z-10">
           <div className="flex items-center">
-            <span className="text-[#7C6A0A] font-sfprodisplay font-extrabold text-[10px] tracking-[6.8px] mr-3">
+            <span className="text-[#7C6A0A] font-sfprodisplay font-extrabold text-[10px] exl:text-[16px] md0:leading-[14px] exl:leading-[22px] tracking-[6.8px] exl:tracking-[10.88px] mr-3 exl:mr-6">
               {topText}
             </span>
             <Icon
               id="HeaderMiniIconMobile"
-              width={12}
-              height={12}
+              width={16}
+              height={16}
+              class="exl:hidden"
+            />
+            <Icon
+              id="HeaderMiniIconDesk"
+              width={24}
+              height={24}
+              class="hidden exl:block"
             />
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
-            <span className="font-pphatton text-[#7C6A0A] text-7xl md0:text-[84px] lg:text-[112px] exl:text-[160px] font-medium tracking-[-7.172px] md0:tracking-[-8.4px] lg:tracking-[-11.2px] exl:tracking-[-16px] xxl:tracking-[-22.4px]">
+            <span className="font-pphatton text-[#7C6A0A] text-7xl leading-[90%] exl:leading-[100%] md0:text-[84px] lg:text-[112px] exl:text-[160px] xxl:text-[224px] font-medium tracking-[-7.2px] md0:tracking-[-8.4px] lg:tracking-[-11.2px] exl:tracking-[-16px] xxl:tracking-[-22.4px]">
               {mainText}
             </span>
             <Icon
               id="LivinRioIcon"
               width={40}
               height={48}
-              class="absolute top-[-40px] right-[-25px]"
+              class="absolute top-[-40px] right-[-25px] exl:hidden"
+            />
+            <Icon
+              id="LivinRioIconExl"
+              width={80}
+              height={104}
+              class="absolute top-[-34px] right-[-90px] hidden exl:block xxl:hidden"
+            />
+            <Icon
+              id="LivinRioIconXxl"
+              width={112}
+              height={160}
+              class="absolute top-[-62px] right-[-115px] hidden xxl:block"
             />
             <span
-              className={`font-crimsonpro text-[#7C6A0A] text-right  text-[24px] lg:text-[32px] exl:text-[64px] font-medium italic`}
+              className={`${textClass} font-crimsonpro text-[#7C6A0A] text-right text-[32px] md0:text-[40px] md0:tracking-[-1.6px] exl:tracking-[-2.56px] exl:text-[64px] font-normal italic`}
             >
-              {isAmazing ? `${subMainTextFinal}` : `${subMainTextInitial}`}
+              {subMainTexts[isText]}
             </span>
           </div>
 
@@ -253,7 +326,7 @@ export default function Header(
               width={17}
               height={17}
             />
-            <span className="text-white font-sfprodisplay text-base font-medium ml-3 whitespace-nowrap">
+            <span className="text-white font-sfprodisplay text-base md0:text-xs exl:text-base font-medium ml-3 whitespace-nowrap">
               Find your way in this content
             </span>
           </button>
@@ -268,10 +341,35 @@ export default function Header(
             }}
           />
         </div>
-        <div class="hidden md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] mr-4 mt-4 ml-auto lg:mr-6 lg:mt-6 exl:mr-8 exl:mt-8 xxl:mr-12 xxl:ml-12">
+        <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] mr-4 mt-4 ml-auto lg:mr-6 lg:mt-6 exl:mr-8 exl:mt-8 xxl:mr-12 xxl:ml-12">
           {backgroundDesktopRightSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
           ))}
+
+          <Icon
+            id="LivinRioBgStar"
+            width={24}
+            height={32}
+            class="hidden md0:block lg:hidden absolute bottom-[17%] right-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarLg"
+            width={32}
+            height={40}
+            class="hidden lg:block exl:hidden absolute bottom-[17%] right-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarXl"
+            width={48}
+            height={56}
+            class="hidden exl:block xxl:hidden absolute bottom-[15%] right-[27%]"
+          />
+          <Icon
+            id="LivinRioBgStarXl"
+            width={48}
+            height={56}
+            class="hidden xxl:block absolute bottom-[15%] right-[30%]"
+          />
         </div>
       </header>
     </>

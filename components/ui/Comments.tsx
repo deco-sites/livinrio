@@ -14,8 +14,8 @@ export default function Comments(
 ) {
   return (
     <>
-      <div id="comments" class="relative pt-[40px] pb-[80px]">
-        <h1 class="text-center max-w-[316px] mx-auto font-crimsontext text-[32px] font-bold tracking-[-1.92px]">
+      <div id="comments" class="relative pt-[40px] pb-6">
+        <h1 class="text-center max-w-[316px] exl:max-w-[570px] mx-auto font-crimsontext text-[32px] lg:text-[40px] exl:text-[64px] font-bold tracking-[-1.92px] lg:tracking-[-2.4px] leading-[38.4px] lg:leading-[48px]">
           {principalTitle}
         </h1>
 
@@ -26,7 +26,14 @@ export default function Comments(
             height={290}
           />
         </div>
-        <div class="absolute right-[3%] top-[-6%] lg:hidden">
+        <div class="absolute right-[3%] top-[-14%] hidden md0:block lg:hidden">
+          <Icon
+            id="SliderAspasMd"
+            width={148}
+            height={150}
+          />
+        </div>
+        <div class="absolute right-[3%] top-[-6%] md0:hidden">
           <Icon
             id="SliderAspasMobile"
             width={63}
@@ -36,17 +43,17 @@ export default function Comments(
         <div class="swiper-container">
           <div class="swiper-wrapper">
             {sliderContent?.map((props, index) => (
-              <div class="swiper-slide min-w-[292px] max-w-[292px] lg:min-w-[566px] lg:max-w-[566px]">
+              <div class="swiper-slide min-w-[292px] max-w-[292px] md0:min-w-[424px] md0:max-w-[424px] lg:min-w-[566px] lg:max-w-[566px]">
                 <div
                   style="box-shadow:0px 0px 12px 0px rgba(0, 0, 0, 0.20);"
-                  class="min-h-[145px] lg:min-h-[281px] bg-white rounded-lg shadow-xl flex flex-col justify-center px-3 py-4 exl:px-10"
+                  class="min-h-[145px] md0:min-h-[210px] lg:min-h-[281px] bg-white rounded-lg md0:rounded-2xl shadow-xl flex flex-col justify-center md0:justify-normal px-3 py-4 md0:p-6 lg:px-10 lg:py-10"
                 >
-                  <span class="font-sfprodisplay font-medium text-xs exl:text-base text-[#252D29] exl:text-black exl:mb-1">
+                  <span class="font-sfprodisplay font-medium text-xs lg:text-base text-[#252D29] exl:text-black exl:mb-1">
                     {props.title}
                   </span>
-                  <span class="font-sfprodisplay text-xs exl:text-sm my-1 text-[#616161] webkitzada">
+                  <div class="min-h-[70px] md0:min-h-[115px]"><span class="font-sfprodisplay font-normal text-xs md0:text-[10.5px] md0:leading-[18.9px] lg:leading-[25.2px] lg:text-sm my-1 md0:my-2 lg:mb-4 text-[#616161] webkitzada">
                     {props.contentText}
-                  </span>
+                  </span></div>
                   <span class="font-sfprodisplay text-xs font-medium text-[#EB6424] exl:mt-3">
                     {props.writtenBy}
                   </span>
@@ -55,7 +62,7 @@ export default function Comments(
             ))}
           </div>
 
-          <div class="relative flex justify-center items-center gap-3 mt-7">
+          <div class="relative flex justify-center items-center gap-3 mt-7 md0:mt-8">
             <button class="comments-button-prev">
               <Icon id="ChevronLeftSliderMobile" width={16} height={16} />
             </button>
@@ -104,9 +111,10 @@ export default function Comments(
             },
             coverflowEffect: {
               rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 10,
+              stretch: 45,
+              depth: 60,
+              modifier: 5,
+              scale: 1,
               initialSlide: 3,
               slideShadows: false
             },
@@ -118,8 +126,19 @@ export default function Comments(
               1024: {
                 coverflowEffect: {
                   rotate: 0,
-                  stretch: 60,
+                  stretch: 70,
                   depth: 80,
+                  modifier: 5,
+                  scale: 1,
+                  initialSlide: 3,
+                  slideShadows: false,
+                }
+              },
+              744: {
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 60,
+                  depth: 50,
                   modifier: 5,
                   scale: 1,
                   initialSlide: 3,
