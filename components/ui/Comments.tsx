@@ -19,14 +19,14 @@ export default function Comments(
           {principalTitle}
         </h1>
 
-        <div class="hidden lg:block absolute right-[3%] top-[-20%]">
+        <div class="hidden exl:block absolute right-[3%] top-[-20%]">
           <Icon
             id="SliderAspasDesk"
             width={287}
             height={290}
           />
         </div>
-        <div class="absolute right-[3%] top-[-14%] hidden md0:block lg:hidden">
+        <div class="absolute right-[3%] top-[-14%] hidden md0:block exl:hidden">
           <Icon
             id="SliderAspasMd"
             width={148}
@@ -51,9 +51,11 @@ export default function Comments(
                   <span class="font-sfprodisplay font-medium text-xs lg:text-base text-[#252D29] exl:text-black exl:mb-1">
                     {props.title}
                   </span>
-                  <div class="min-h-[70px] md0:min-h-[115px]"><span class="font-sfprodisplay font-normal text-xs md0:text-[10.5px] md0:leading-[18.9px] lg:leading-[25.2px] lg:text-sm my-1 md0:my-2 lg:mb-4 text-[#616161] webkitzada">
-                    {props.contentText}
-                  </span></div>
+                  <div class="min-h-[70px] md0:min-h-[115px]">
+                    <span class="font-sfprodisplay font-normal text-xs md0:text-[10.5px] md0:leading-[18.9px] lg:leading-[25.2px] lg:text-sm my-1 md0:my-2 lg:mb-4 text-[#616161] webkitzada">
+                      {props.contentText}
+                    </span>
+                  </div>
                   <span class="font-sfprodisplay text-xs font-medium text-[#EB6424] exl:mt-3">
                     {props.writtenBy}
                   </span>

@@ -37,7 +37,10 @@ export interface Accordion {
 
 export default function AccordionGroup({ content }: AccordionProps) {
   return (
-    <div id="accordion" class="bg-[#FCF9EB] rounded-b-[40px] pb-8 pt-16 md0:pt-12 lg:pb-16 xxl:py-24">
+    <div
+      id="accordion"
+      class="bg-[#FCF9EB] rounded-b-[40px] pb-8 pt-16 md0:pt-12 lg:pb-16 xxl:py-24"
+    >
       {content.map((card) => <Accordion {...card} />)}
     </div>
   );
@@ -62,16 +65,18 @@ function Accordion(
 
   return (
     <div
-      className={`mx-4 md0:mx-10 lg:mx-20 exl:max-w-[1240px] xxl:max-w-[1430px] exl:mx-auto ${open ? "pb-4" : "pb-0"
-        }`}
+      className={`mx-4 md0:mx-10 lg:mx-20 exl:max-w-[1240px] xxl:max-w-[1430px] exl:mx-auto ${
+        open ? "pb-4" : "pb-0"
+      }`}
     >
       <>
         <div class="bg-[#BABD8D80] exl:hover:bg-[#BABD8D] mb-4 lg:mb-6 exl:mb-8 rounded-lg">
           <div
-            className={`cursor-pointer flex items-center pl-5 lg:pl-6 exl:pl-10 exl:py-8 h-[48px] rounded-md font-sfprodisplay font-medium exl:h-[96px] ${open
-              ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
-              : "bg-[#BABD8D80]"
-              }`}
+            className={`cursor-pointer flex items-center pl-5 lg:pl-6 exl:pl-10 exl:py-8 h-[48px] rounded-md font-sfprodisplay font-medium exl:h-[96px] ${
+              open
+                ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
+                : "bg-[#BABD8D80]"
+            }`}
             onClick={() => setOpen(!open)}
           >
             <div class="hidden exl:block">
@@ -90,17 +95,19 @@ function Accordion(
             className={`exl:max-h-[598px]`}
           >
             <div
-              className={`${open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
-                } flex flex-col max-w-[1110px] exl:max-w-[1240px] exl:mx-auto px-5 md0:pl-[48px] md0:pr-[56px] exl:pl-[96px] exl:pr-[64px] exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
+              className={`${
+                open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
+              } flex flex-col max-w-[1110px] exl:max-w-[1240px] exl:mx-auto px-5 md0:pl-[48px] md0:pr-[56px] exl:pl-[96px] exl:pr-[64px] exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
             >
               {categories && (
                 <div class="hidden cursor-pointer md0:flex md0:gap-2 exl:gap-4 md0:mt-5 lg:mt-6 exl:mt-10 mb-6 lg:mb-8 exl:mb-14">
                   {categories?.map((category) => (
                     <span
-                      class={`rounded-[51px] bg-[#4137031a] md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${selectedCategory === category
-                        ? "border-[1px] border-[#41370366]"
-                        : ""
-                        }`}
+                      class={`rounded-[51px] bg-[#4137031a] md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${
+                        selectedCategory === category
+                          ? "border-[1px] border-[#41370366]"
+                          : ""
+                      }`}
                       onClick={() => setSelectedCategory(category)}
                     >
                       {category}

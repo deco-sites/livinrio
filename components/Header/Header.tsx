@@ -168,8 +168,9 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             loading="eager"
-            className={`${showImage ? `opacity-1` : `opacity-0`
-              } transition-opacity duration-200 ease-in-out w-full object-cover`}
+            className={`${
+              showImage ? `opacity-1` : `opacity-0`
+            } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : ""}
@@ -197,9 +198,9 @@ export default function Header(
       if (subMainTexts.length > 1) {
         if (isText === subMainTexts.length - 1) {
           clearTimeout(timer);
-          return
+          return;
         }
-        setTextClass("fade-out")
+        setTextClass("fade-out");
       }
     }, 800);
 
@@ -213,12 +214,11 @@ export default function Header(
       setTimeout(() => {
         setTextClass("fade-in");
         setIsText((prevText) => {
-          return prevText + 1
-        })
+          return prevText + 1;
+        });
       }, 150);
     }
-  }, [textClass])
-
+  }, [textClass]);
 
   return (
     <>
@@ -265,7 +265,6 @@ export default function Header(
             class="hidden xxl:block absolute top-[50%] translate-y-[-50%] left-[28%]"
           />
         </div>
-
 
         <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto z-10">
           <div className="flex items-center">
