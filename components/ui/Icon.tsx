@@ -39,14 +39,23 @@ export type AvailableIcons =
   | "AccordionIconPlusDesk"
   | "AccordionIconLess"
   | "ChevronRightCardDesk"
+  | "ChevronRightCardTablet"
   | "ChevronRightCardMobile"
   | "ChevronLeftSliderMobile"
   | "ChevronRightSliderMobile"
   | "SliderAspasDesk"
+  | "SliderAspasMd"
   | "SliderAspasMobile"
   | "HeaderMiniIconMobile"
+  | "HeaderMiniIconDesk"
   | "FindIcon"
-  | "LivinRioIcon";
+  | "LivinRioIcon"
+  | "LivinRioIconExl"
+  | "LivinRioIconXxl"
+  | "LivinRioBgStar"
+  | "LivinRioBgStarLg"
+  | "LivinRioBgStarXl"
+  | "CloseSearchIcon";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

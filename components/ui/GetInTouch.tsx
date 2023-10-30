@@ -56,11 +56,11 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
 
   return (
     <div class="">
-      <div class="mb-8">
-        <h1 class="text-[#252D29] font-crimsontext text-2xl font-bold text-center mb-3">
+      <div class="mb-8 md0:mb-10">
+        <h1 class="text-[#252D29] font-crimsontext text-2xl lg:text-[32px] exl:text-[64px] xxl:text-[48px] leading-[28.8px] exl:leading-[120%] tracking-[-0.96px] font-bold text-center mb-4">
           {formTitle}
         </h1>
-        <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs">
+        <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs md0:text-[14px] md0:leading-[18px]">
           {formSubTitle}
         </p>
       </div>
@@ -73,13 +73,13 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label
               for="fullname"
-              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
             >
               Your complete name
             </label>
             <input
               id="fullname"
-              class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
+              class="w-full py-[9px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Fullname"
               aria-labelledby="Full name"
@@ -91,13 +91,13 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
             <label
               for="companywebsite"
-              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
             >
               Company website
             </label>
             <input
               id="companywebsite"
-              class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
+              class="w-full py-[9px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="CompanyWebsite"
               aria-labelledby="Company Website"
@@ -109,13 +109,13 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label
               for="email"
-              class="font-sfprodisplay font-normal w-full text-xs text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
             >
               Email
             </label>
             <input
               id="email"
-              class="w-full py-[10px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
+              class="w-full py-[9px] px-[14px] border-[1px] border-solid border-[rgba(171, 171, 171, 0.40)] rounded-lg mt-[6px]"
               type="text"
               name="Email"
               aria-labelledby="E-mail"
@@ -127,7 +127,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
 
           <button
             type="submit"
-            class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 text-white text-center bg-[#343F39] rounded-lg w-full py-4"
+            class="font-sfprodisplay font-medium flex items-center justify-center max-h-[40px] max-w-[400px] mt-8 md0:mt-10 md0:text-base md0:leading-[20px] text-white text-center bg-[#343F39] rounded-lg w-full py-4"
           >
             Get in touch with us
           </button>
