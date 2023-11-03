@@ -57,42 +57,54 @@ function GlobalTags() {
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
-                  src: url('${asset("/fonts/CrimsonPro-Regular.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/CrimsonPro-Regular.woff2")
+          }') format('woff2');
                 }
                 @font-face {
                   font-family: 'Crimson Pro';
                   font-style: italic;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${asset("/fonts/CrimsonPro-MediumItalic.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/CrimsonPro-MediumItalic.woff2")
+          }') format('woff2');
                 }
                 @font-face {
                   font-family: 'Crimson Text';
                   font-style: normal;
                   font-weight: 700;
                   font-display: swap;
-                  src: url('${asset("/fonts/CrimsonText-Bold.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/CrimsonText-Bold.woff2")
+          }') format('woff2');
                 }
                 @font-face {
                   font-family: 'PP Hatton';
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${asset("/fonts/PP-Hatton-Medium.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/PP-Hatton-Medium.woff2")
+          }') format('woff2');
                 }
                 @font-face {
                   font-family: 'SF Pro Display';
                   font-style: normal;
                   font-weight: 500;
                   font-display: swap;
-                  src: url('${asset("/fonts/SFPRODISPLAYMEDIUM.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/SFPRODISPLAYMEDIUM.woff2")
+          }') format('woff2');
                 }
                 @font-face {
                   font-family: 'SF Pro Display';
                   font-style: normal;
                   font-weight: 400;
                   font-display: swap;
-                  src: url('${asset("/fonts/SFPRODISPLAYREGULAR.woff2")}') format('woff2');
+                  src: url('${
+            asset("/fonts/SFPRODISPLAYREGULAR.woff2")
+          }') format('woff2');
                 }
                 .swiper-container {
                   width: 100%;

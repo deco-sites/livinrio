@@ -57,7 +57,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
   return (
     <div class="">
       <div class="mb-8 md0:mb-10">
-        <h1 class="text-[#252D29] font-crimsontext text-2xl lg:text-[32px] exl:text-[64px] xxl:text-[48px] leading-[28.8px] exl:leading-[120%] tracking-[-0.96px] font-bold text-center mb-4">
+        <h1 class="text-[#252D29] font-crimsontext text-2xl lg:text-[32px] exl:text-[48px] leading-[28.8px] exl:leading-[120%] tracking-[-0.96px] exl:tracking-[-1.92px] font-bold text-center mb-4">
           {formTitle}
         </h1>
         <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs md0:text-[14px] md0:leading-[18px]">

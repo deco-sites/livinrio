@@ -21,7 +21,7 @@ export interface Footer {
 export default function Footer({ partners, footerItems }: Footer) {
   return (
     <div class="">
-      <div class="hidden md0:block max-w-[664px] lg:max-w-[656px] mx-auto pt-[56px]">
+      <div class="hidden md0:block max-w-[664px] lg:max-w-[656px] mx-auto pt-[56px] exl:pt-[64px]">
         <div class="flex flex-col">
           <span class="font-sfprodisplay font-medium text-center mb-8 text-[#616161] text-base">
             Some of our partners
