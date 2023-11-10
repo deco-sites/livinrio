@@ -38,6 +38,7 @@ export type AvailableIcons =
   | "AccordionIconPlus"
   | "AccordionIconPlusDesk"
   | "AccordionIconLess"
+  | "AccordionIconLessMobile"
   | "ChevronRightCardDesk"
   | "ChevronRightCardTablet"
   | "ChevronRightCardMobile"

@@ -65,8 +65,7 @@ function Accordion(
 
   return (
     <div
-      className={`mx-4 md0:mx-10 lg:mx-20 exl:max-w-[1240px] xxl:max-w-[1430px] exl:mx-auto ${open ? "pb-4" : "pb-0"
-        }`}
+      className={`mx-4 md0:mx-10 lg:mx-20 exl:max-w-[1240px] xxl:max-w-[1430px] exl:mx-auto pb-0`}
     >
       <>
         <div class="bg-[#BABD8D66]  lg:hover:bg-[#BABD8DCC] mb-4 lg:mb-6 exl:mb-8 rounded-lg">
@@ -82,8 +81,9 @@ function Accordion(
                 ? <Icon id="AccordionIconLess" width={32} height={32} />
                 : <Icon id="AccordionIconPlusDesk" width={32} height={32} />}
             </div>
-            <div class="exl:hidden">
-              <Icon id="AccordionIconPlus" width={24} height={24} />
+            <div class="exl:hidden w-[24px] flex justify-center items-center">
+              {open ? <Icon id="AccordionIconLessMobile" width={16} height={16} /> :
+                <Icon id="AccordionIconPlus" width={24} height={24} />}
             </div>
             <p class="ml-3 lg:ml-4 exl:ml-6 font-sfprodisplay text-base md0:text-[14px] font-medium md0:leading-[17px] exl:text-2xl text-[#252D29]">
               {accordionText}
@@ -97,10 +97,10 @@ function Accordion(
                 } flex flex-col max-w-[1110px] exl:max-w-[1240px] exl:mx-auto px-5 md0:pl-[48px] md0:pr-[56px] exl:pl-[96px] exl:pr-[64px] exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
             >
               {categories && (
-                <div class="hidden cursor-pointer md0:flex md0:gap-2 exl:gap-4 md0:mt-5 lg:mt-6 exl:mt-10 mb-6 lg:mb-8 exl:mb-14">
+                <div class="flex flex-wrap gap-3 mt-5 md0:flex-nowrap cursor-pointer  md0:gap-2 exl:gap-4 lg:mt-6 exl:mt-10 mb-6 lg:mb-8 exl:mb-14">
                   {categories?.map((category) => (
                     <span
-                      class={`rounded-[51px] bg-[#4137031a] md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${selectedCategory === category
+                      class={`rounded-[51px] bg-[#4137031a] text-[12px] px-2 md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${selectedCategory === category
                         ? "border-[1px] border-[#41370366]"
                         : ""
                         }`}
@@ -113,7 +113,7 @@ function Accordion(
               )}
               <div class="flex justify-normal">
                 <div class="flex flex-col">
-                  <span class="font-pphatton text-[#252D29] lg:font-crimsontext font-extrabold text-sm md0:text-[16px] md0:w-[200px] lg:w-[unset] exl:text-2xl exl:leading-[120%] mb-6 pt-4 exl:pt-0">
+                  <span class="font-pphatton text-[#252D29] lg:font-crimsontext font-extrabold text-sm md0:text-[16px] md0:w-[200px] lg:w-[unset] exl:text-2xl exl:leading-[120%] exl:tracking-[-0.96px] mb-6 pt-4 md0:pt-0">
                     {accordionContentTitle}
                   </span>
                   <span class="font-sfprodisplay text-[#252D29] text-sm md0:text-[10px] md0:leading-[150%] md0:w-[200px] lg:w-[unset] exl:text-sm mb-6">
@@ -142,7 +142,7 @@ function Accordion(
                             )
                             : ""}
                         </div>
-                        <div class="flex flex-col pl-4 pr-3 pt-3 pb-4 md0:p-2 exl:py-6">
+                        <div class="flex flex-col pl-4 pr-3 pt-3 pb-4 md0:p-2 exl:px-4 exl:py-6">
                           <span class="font-sfprodisplay font-semibold text-[10px] lg:text-[13px] exl:text-base leading-[normal]">
                             {cards.topText}
                           </span>
@@ -150,7 +150,7 @@ function Accordion(
                             {cards.title}
                           </span>
                           <div class="flex items-center justify-between relative">
-                            <span class="max-w-[234px] font-sfprodisplay font-light break-all text-[10px] lg:text-[13px] exl:text-xs leading-[normal] webkitzadaacc md0:pr-5">
+                            <span class="max-w-[234px] font-sfprodisplay font-light break-all text-[10px] lg:text-[13px] exl:text-xs leading-[normal] webkitzadaacc md0:pr-5 exl:pr-4">
                               {cards.textContent}
                             </span>
                             <Icon
@@ -173,8 +173,9 @@ function Accordion(
                 </div>
               </div>
 
+              {/* Mobile cards */}
               <div class="flex flex-col md0:hidden rounded-lg md0:flex-wrap md0:flex-row md0:max-w-[650px]">
-                {contentCard?.map((cards) => (
+                {filteredCards?.map((cards) => (
                   <div class="flex exl:flex-col exl:max-w-[306px] exl:min-w-[306px] exl:mr-4 bg-white mb-4 rounded-lg">
                     <div class="relative">
                       {cards.image?.image && (

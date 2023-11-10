@@ -168,8 +168,9 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             loading="eager"
-            className={`${showImage ? `opacity-1` : `opacity-0`
-              } transition-opacity duration-200 ease-in-out w-full object-cover`}
+            className={`${
+              showImage ? `opacity-1` : `opacity-0`
+            } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : ""}
