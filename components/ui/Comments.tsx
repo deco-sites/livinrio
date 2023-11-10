@@ -14,7 +14,10 @@ export default function Comments(
 ) {
   return (
     <>
-      <div id="comments" class="relative pt-[40px] pb-6 lg:py-16 exl:py-[160px]">
+      <div
+        id="comments"
+        class="relative pt-[40px] pb-6 lg:py-16 exl:py-[160px]"
+      >
         <h1 class="text-center max-w-[316px] exl:max-w-[570px] mx-auto font-crimsontext text-[32px] lg:text-[40px] exl:text-[64px] lg:mb-[20px] exl:mb-[44px] font-bold tracking-[-1.92px] lg:tracking-[-2.4px] leading-[38.4px] lg:leading-[48px] exl:leading-[76.8px]">
           {principalTitle}
         </h1>
