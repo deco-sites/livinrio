@@ -50,7 +50,6 @@ export type AvailableIcons =
   | "HeaderMiniIconMobile"
   | "HeaderMiniIconDesk"
   | "FindIcon"
-  | "FindWay"
   | "LivinRioIcon"
   | "LivinRioIconExl"
   | "LivinRioIconXxl"

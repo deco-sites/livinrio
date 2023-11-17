@@ -92,23 +92,21 @@ export default function Comments(
         const handleLoadScript = (src, onLoadCallback) => {
           const script = document.createElement("script");
           script.src = src;
-          script.async = true;
+          script.defer = true;
         
-          script.onload = () => {
-            onLoadCallback();
-          };
+          script.onload = onLoadCallback;
         
           document.head.appendChild(script);
         }
-        
-        handleLoadScript("/lib/swiper-bundle.min.js", () => {
+
+        const loadSwiperScript = () => {
           handleLoadCss("/lib/swiper-bundle.min.css");
+
           var swiper = new Swiper(".swiper-container", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: "auto",
-            centeredSlides: true,
             initialSlide: 2,
             navigation: {
               nextEl: ".comments-button-next",
@@ -151,8 +149,12 @@ export default function Comments(
                 }
               }
             }
-          });        
-        })
+          });
+        };
+        
+        setTimeout(() => {
+          handleLoadScript("/lib/swiper-bundle.min.js", loadSwiperScript);
+        }, 2000);
       `,
         }}
       >
