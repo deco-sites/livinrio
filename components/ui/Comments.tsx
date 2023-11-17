@@ -1,3 +1,4 @@
+import { asset } from "$fresh/runtime.ts";
 import Icon from "./Icon.tsx";
 
 export interface Props {
@@ -100,7 +101,7 @@ export default function Comments(
         }
 
         const loadSwiperScript = () => {
-          handleLoadCss("/lib/swiper-bundle.min.css");
+          handleLoadCss("${asset("/lib/swiper-bundle.min.css")}");
 
           var swiper = new Swiper(".swiper-container", {
             effect: "coverflow",
@@ -153,7 +154,7 @@ export default function Comments(
         };
         
         setTimeout(() => {
-          handleLoadScript("/lib/swiper-bundle.min.js", loadSwiperScript);
+          handleLoadScript("${asset("/lib/swiper-bundle.min.js")}", loadSwiperScript);
         }, 2000);
       `,
         }}
