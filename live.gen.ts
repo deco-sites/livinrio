@@ -5,10 +5,9 @@
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Accordion.tsx";
-import * as $$$$$1 from "./islands/Footer.tsx";
-import * as $$$$$2 from "./islands/GetInTouch.tsx";
-import * as $$$$$3 from "./islands/Header.tsx";
-import * as $$$$$4 from "./islands/SliderJS.tsx";
+import * as $$$$$1 from "./islands/GetInTouch.tsx";
+import * as $$$$$2 from "./islands/Header.tsx";
+import * as $$$$$3 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/Accordion.tsx";
 import * as $$$$$$$$1 from "./sections/Comments.tsx";
 import * as $$$$$$$$2 from "./sections/DataSection.tsx";
@@ -168,10 +167,9 @@ const manifest = {
   },
   "islands": {
     "./islands/Accordion.tsx": $$$$$0,
-    "./islands/Footer.tsx": $$$$$1,
-    "./islands/GetInTouch.tsx": $$$$$2,
-    "./islands/Header.tsx": $$$$$3,
-    "./islands/SliderJS.tsx": $$$$$4,
+    "./islands/GetInTouch.tsx": $$$$$1,
+    "./islands/Header.tsx": $$$$$2,
+    "./islands/SliderJS.tsx": $$$$$3,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
