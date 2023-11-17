@@ -10,39 +10,39 @@ function GlobalTags() {
 
       <link
         rel="preload"
-        type="text/css"
+        type="font/woff2"
         href={asset("/fonts/CrimsonPro-Regular.woff2")}
       />
       <link
         rel="preload"
-        type="text/css"
+        type="font/woff2"
         href={asset("/fonts/CrimsonPro-MediumItalic.woff2")}
       />
       <link
         rel="preload"
-        type="text/css"
+        type="font/woff2"
         href={asset("/fonts/CrimsonText-Bold.woff2")}
       />
       <link
         rel="preload"
-        type="text/css"
+        type="font/woff2"
         href={asset("/fonts/CrimsonText-Bold.woff2")}
       />
       <link
         rel="preload"
-        type="text/css"
+        type="font/woff2"
         href={asset("/fonts/PP-Hatton-Medium.woff2")}
       />
       <link
         as="font"
         rel="preload"
-        type="font/woff"
+        type="font/woff2"
         href={asset("/fonts/SFPRODISPLAYMEDIUM.woff2")}
       />
       <link
         as="font"
         rel="preload"
-        type="font/2"
+        type="font/woff2"
         href={asset("/fonts/SFPRODISPLAYREGULAR.woff2")}
       />
 
