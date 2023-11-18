@@ -47,7 +47,13 @@ export interface HeaderProps {
   backgroundDesktopLeftSide: BackgroundHeader[];
   backgroundDesktopRightSide: BackgroundHeader[];
   topText: string;
-  mainText: string;
+  mainText?: {
+    mobile: LiveImage;
+    tablet: LiveImage;
+    tabletTwo: LiveImage;
+    desktop: LiveImage;
+    desktopTwo: LiveImage;
+  };
   subMainTexts: string[];
   search: Search;
 }
@@ -168,9 +174,8 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             loading="eager"
-            className={`${
-              showImage ? `opacity-1` : `opacity-0`
-            } transition-opacity duration-200 ease-in-out w-full object-cover`}
+            className={`${showImage ? `opacity-1` : `opacity-0`
+              } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : ""}
@@ -285,9 +290,33 @@ export default function Header(
             />
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
-            <span className="font-pphatton text-[#7C6A0A] text-7xl leading-[90%] exl:leading-[100%] md0:text-[84px] lg:text-[112px] exl:text-[160px] xxl:text-[224px] font-medium tracking-[-7.2px] md0:tracking-[-8.4px] lg:tracking-[-11.2px] exl:tracking-[-16px] xxl:tracking-[-22.4px]">
-              {mainText}
-            </span>
+            {mainText &&
+              <><Image
+                src={mainText?.mobile}
+                loading="lazy"
+                width={234}
+                className="md0:hidden" />
+                <Image
+                  src={mainText?.tablet}
+                  loading="lazy"
+                  width={273}
+                  className="hidden md0:block lg:hidden" />
+                <Image
+                  src={mainText?.tabletTwo}
+                  loading="lazy"
+                  width={364}
+                  className="hidden lg:block exl:hidden" />
+                <Image
+                  src={mainText?.desktop}
+                  loading="lazy"
+                  width={519}
+                  className="hidden exl:block xxl:hidden" />
+                <Image
+                  src={mainText?.desktopTwo}
+                  loading="lazy"
+                  width={726}
+                  className="hidden xxl:block" /></>
+            }
             <Icon
               id="LivinRioIcon"
               width={40}
