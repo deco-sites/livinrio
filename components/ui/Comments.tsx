@@ -69,11 +69,11 @@ export default function Comments(
           </div>
 
           <div class="relative flex justify-center items-center gap-3 mt-7 md0:mt-8">
-            <button class="comments-button-prev">
+            <button class="comments-button-prev" aria-label="previous button">
               <Icon id="ChevronLeftSliderMobile" width={16} height={16} />
             </button>
             <div class="swiper-pagination"></div>
-            <button class="comments-button-next">
+            <button class="comments-button-next" aria-label="next button">
               <Icon id="ChevronRightSliderMobile" width={16} height={16} />
             </button>
           </div>
@@ -154,9 +154,8 @@ export default function Comments(
         };
         
         setTimeout(() => {
-          handleLoadScript("${
-            asset("/lib/swiper-bundle.min.js")
-          }", loadSwiperScript);
+          handleLoadScript("${asset("/lib/swiper-bundle.min.js")
+            }", loadSwiperScript);
         }, 2000);
       `,
         }}

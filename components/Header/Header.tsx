@@ -291,32 +291,45 @@ export default function Header(
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
             {mainText &&
-              <><Image
-                src={mainText?.mobile}
-                loading="lazy"
-                width={234}
-                className="md0:hidden" />
-                <Image
-                  src={mainText?.tablet}
-                  loading="lazy"
-                  width={273}
-                  className="hidden md0:block lg:hidden" />
-                <Image
-                  src={mainText?.tabletTwo}
-                  loading="lazy"
-                  width={364}
-                  className="hidden lg:block exl:hidden" />
-                <Image
-                  src={mainText?.desktop}
-                  loading="lazy"
-                  width={519}
-                  className="hidden exl:block xxl:hidden" />
-                <Image
-                  src={mainText?.desktopTwo}
-                  loading="lazy"
-                  width={726}
-                  className="hidden xxl:block" /></>
-            }
+              (
+                <>
+                  <Image
+                    src={mainText?.mobile}
+                    loading="lazy"
+                    width={234}
+                    height={60}
+                    className="md0:hidden"
+                  />
+                  <Image
+                    src={mainText?.tablet}
+                    loading="lazy"
+                    width={273}
+                    height={70}
+                    className="hidden md0:block lg:hidden"
+                  />
+                  <Image
+                    src={mainText?.tabletTwo}
+                    loading="lazy"
+                    width={364}
+                    height={93}
+                    className="hidden lg:block exl:hidden"
+                  />
+                  <Image
+                    src={mainText?.desktop}
+                    loading="lazy"
+                    width={519}
+                    height={132}
+                    className="hidden exl:block xxl:hidden"
+                  />
+                  <Image
+                    src={mainText?.desktopTwo}
+                    loading="lazy"
+                    width={726}
+                    height={185}
+                    className="hidden xxl:block"
+                  />
+                </>
+              )}
             <Icon
               id="LivinRioIcon"
               width={40}
