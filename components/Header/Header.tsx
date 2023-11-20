@@ -196,7 +196,7 @@ export default function Header(
               height={160}
               class="absolute top-[-62px] right-[-115px] hidden xxl:block"
             />
-            
+
             <SubMainText subMainTexts={subMainTexts} />
           </div>
 

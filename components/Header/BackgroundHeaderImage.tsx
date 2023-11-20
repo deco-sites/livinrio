@@ -1,6 +1,7 @@
-import { useEffect, useState } from "preact/compat";
+import { useEffect } from "preact/compat";
 import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { useSignal } from "@preact/signals";
 
 export interface BackgroundImageHeader {
   /**
@@ -33,19 +34,20 @@ export interface BackgroundHeader {
 function BackgroundHeaderImage(
   { background }: { background: BackgroundHeader },
 ) {
-  const [showImage, setShowImage] = useState(false);
+  const initialView = background.image?.intervalTime === 0 ||
+    background.image?.intervalTime === null;
+
+  const showImage = useSignal(initialView);
 
   useEffect(() => {
     if (
-      background.image?.intervalTime === 0 ||
-      background.image?.intervalTime === null
+      initialView
     ) {
-      setShowImage(true);
       return;
     }
 
     const imageTimer = setInterval(() => {
-      setShowImage((value) => !value);
+      showImage.value = !showImage.value;
     }, background.image?.intervalTime || 3000);
 
     return () => {
@@ -75,11 +77,11 @@ function BackgroundHeaderImage(
             width={120}
             loading="eager"
             className={`${
-              showImage ? `opacity-1` : `opacity-0`
+              showImage.value ? `opacity-1` : `opacity-0`
             } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
-        : ""}
+        : null}
     </div>
   );
 }
