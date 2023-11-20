@@ -1,3 +1,4 @@
+import { Head } from "$fresh/runtime.ts";
 import { useEffect, useState } from "preact/compat";
 import Icon from "../ui/Icon.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -229,6 +230,16 @@ export default function Header(
 
   return (
     <>
+      <Head>
+        {background?.map((bg) => bg.image?.bgImage && (
+          <link
+            rel="preload"
+            as="image"
+            href={bg.image?.bgImage}
+          >
+          </link>
+        ))}
+      </Head>
       <div class="md0:hidden">
         <SearchContent
           items={search.items}
