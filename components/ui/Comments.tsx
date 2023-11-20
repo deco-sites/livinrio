@@ -154,8 +154,9 @@ export default function Comments(
         };
         
         setTimeout(() => {
-          handleLoadScript("${asset("/lib/swiper-bundle.min.js")
-            }", loadSwiperScript);
+          handleLoadScript("${
+            asset("/lib/swiper-bundle.min.js")
+          }", loadSwiperScript);
         }, 2000);
       `,
         }}
