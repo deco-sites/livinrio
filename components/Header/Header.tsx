@@ -231,14 +231,14 @@ export default function Header(
   return (
     <>
       <Head>
-        {background?.map((bg) => bg.image?.bgImage && (
+        {background[4].image?.bgImage && (
           <link
             rel="preload"
             as="image"
-            href={bg.image?.bgImage}
+            href={background[4].image?.bgImage}
           >
           </link>
-        ))}
+        )}
       </Head>
       <div class="md0:hidden">
         <SearchContent
