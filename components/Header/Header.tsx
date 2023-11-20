@@ -2,6 +2,7 @@ import { useEffect, useState } from "preact/compat";
 import Icon from "../ui/Icon.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 export interface Search {
   items: SearchItem[];
@@ -47,7 +48,13 @@ export interface HeaderProps {
   backgroundDesktopLeftSide: BackgroundHeader[];
   backgroundDesktopRightSide: BackgroundHeader[];
   topText: string;
-  mainText: string;
+  mainText?: {
+    mobile: LiveImage;
+    tablet: LiveImage;
+    tabletTwo: LiveImage;
+    desktop: LiveImage;
+    desktopTwo: LiveImage;
+  };
   subMainTexts: string[];
   search: Search;
 }
@@ -285,9 +292,51 @@ export default function Header(
             />
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
-            <span className="font-pphatton text-[#7C6A0A] text-7xl leading-[90%] exl:leading-[100%] md0:text-[84px] lg:text-[112px] exl:text-[160px] xxl:text-[224px] font-medium tracking-[-7.2px] md0:tracking-[-8.4px] lg:tracking-[-11.2px] exl:tracking-[-16px] xxl:tracking-[-22.4px]">
-              {mainText}
-            </span>
+            {mainText && (
+              <Picture preload>
+                <Source
+                  media="(max-width: 743px)"
+                  fetchPriority="high"
+                  src={mainText?.mobile}
+                  width={234}
+                  height={60}
+                />
+                <Source
+                  media="(min-width: 744px) and (max-width: 1023px)"
+                  fetchPriority="high"
+                  src={mainText?.tablet}
+                  width={273}
+                  height={70}
+                />
+                <Source
+                  media="(min-width: 1024px) and (max-width: 1439px)"
+                  fetchPriority="high"
+                  src={mainText?.tabletTwo}
+                  width={364}
+                  height={93}
+                />
+                <Source
+                  media="(min-width: 1440px) and (max-width: 1919px)"
+                  fetchPriority="high"
+                  src={mainText?.desktop}
+                  width={519}
+                  height={132}
+                />
+                <Source
+                  media="(min-width: 1920px)"
+                  fetchPriority="high"
+                  src={mainText?.desktopTwo}
+                  width={726}
+                  height={185}
+                />
+                <img
+                  loading="eager"
+                  src={mainText?.desktop}
+                  alt="LivinRio"
+                />
+              </Picture>
+            )}
+
             <Icon
               id="LivinRioIcon"
               width={40}
