@@ -83,85 +83,98 @@ export default function Comments(
         defer
         dangerouslySetInnerHTML={{
           __html: `
-          const handleLoadCss = (styles) => {
-            const style = document.createElement("link");
-            style.href = styles;
-            style.rel = "stylesheet";
-            document.head.appendChild(style);
-          };
+      const handleLoadCss = (styles) => {
+        const style = document.createElement("link");
+        style.href = styles;
+        style.rel = "stylesheet";
+        document.head.appendChild(style);
+      };
 
-        const handleLoadScript = (src, onLoadCallback) => {
-          const script = document.createElement("script");
-          script.src = src;
-          script.defer = true;
-        
-          script.onload = onLoadCallback;
-        
-          document.head.appendChild(script);
-        }
+      const handleLoadScript = (src, onLoadCallback) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.defer = true;
 
-        const loadSwiperScript = () => {
-          handleLoadCss("${asset("/lib/swiper-bundle.min.css")}");
+        script.onload = onLoadCallback;
 
-          var swiper = new Swiper(".swiper-container", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            initialSlide: 2,
-            navigation: {
-              nextEl: ".comments-button-next",
-              prevEl: ".comments-button-prev"
+        document.head.appendChild(script);
+      };
+
+      const loadSwiperScript = () => {
+        handleLoadCss("${asset("/lib/swiper-bundle.min.css")}");
+
+        var swiper = new Swiper(".swiper-container", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          initialSlide: 2,
+          navigation: {
+            nextEl: ".comments-button-next",
+            prevEl: ".comments-button-prev"
+          },
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 45,
+            depth: 60,
+            modifier: 5,
+            scale: 1,
+            initialSlide: 3,
+            slideShadows: false
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          },
+          breakpoints: {
+            1024: {
+              coverflowEffect: {
+                rotate: 0,
+                stretch: 70,
+                depth: 80,
+                modifier: 5,
+                scale: 1,
+                initialSlide: 3,
+                slideShadows: false,
+              }
             },
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 45,
-              depth: 60,
-              modifier: 5,
-              scale: 1,
-              initialSlide: 3,
-              slideShadows: false
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true
-            },
-            breakpoints: {
-              1024: {
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 70,
-                  depth: 80,
-                  modifier: 5,
-                  scale: 1,
-                  initialSlide: 3,
-                  slideShadows: false,
-                }
-              },
-              744: {
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 60,
-                  depth: 50,
-                  modifier: 5,
-                  scale: 1,
-                  initialSlide: 3,
-                  slideShadows: false,
-                }
+            744: {
+              coverflowEffect: {
+                rotate: 0,
+                stretch: 60,
+                depth: 50,
+                modifier: 5,
+                scale: 1,
+                initialSlide: 3,
+                slideShadows: false,
               }
             }
-          });
-        };
-        
-        setTimeout(() => {
-          handleLoadScript("${
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              handleLoadScript("${
             asset("/lib/swiper-bundle.min.js")
           }", loadSwiperScript);
-        }, 2000);
-      `,
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.2 } // Change the threshold as needed
+      );
+
+      const commentsElement = document.getElementById("comments");
+      if (commentsElement) {
+        observer.observe(commentsElement);
+      }
+    `,
         }}
       >
-      </script>
+      </script>;
     </>
   );
 }

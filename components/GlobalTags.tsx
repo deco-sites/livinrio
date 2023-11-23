@@ -10,39 +10,51 @@ function GlobalTags() {
 
       <link
         rel="preload"
+        as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/CrimsonPro-Regular.woff2")}
       />
       <link
         rel="preload"
+        as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/CrimsonPro-MediumItalic.woff2")}
       />
       <link
         rel="preload"
+        as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/CrimsonText-Bold.woff2")}
       />
       <link
         rel="preload"
+        as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/CrimsonText-Bold.woff2")}
       />
       <link
         rel="preload"
+        as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/PP-Hatton-Medium.woff2")}
       />
       <link
         as="font"
         rel="preload"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/SFPRODISPLAYMEDIUM.woff2")}
       />
       <link
         as="font"
         rel="preload"
         type="font/woff2"
+        crossOrigin="anonymous"
         href={asset("/fonts/SFPRODISPLAYREGULAR.woff2")}
       />
 
