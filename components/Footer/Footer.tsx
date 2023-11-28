@@ -1,6 +1,6 @@
 import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Footer {
   partners?: {

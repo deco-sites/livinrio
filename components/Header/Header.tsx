@@ -1,6 +1,6 @@
 import Icon from "../ui/Icon.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 import SearchContent from "deco-sites/livinrio/islands/Header/SearchContent.tsx";
 import ToggleSearchContent from "deco-sites/livinrio/islands/Header/ToggleSearchContent.tsx";
 import SubMainText from "deco-sites/livinrio/islands/Header/SubMainText.tsx";
