@@ -1,7 +1,7 @@
 import { useState } from "preact/compat";
 import Icon from "./Icon.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 export interface AccordionProps {
   content: Accordion[];
