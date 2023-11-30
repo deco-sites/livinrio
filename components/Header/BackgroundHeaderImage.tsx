@@ -1,14 +1,14 @@
 import { useEffect } from "preact/compat";
 import Image from "apps/website/components/Image.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useSignal } from "@preact/signals";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface BackgroundImageHeader {
   /**
    * @default false
    */
   showImageBg?: boolean;
-  bgImage?: LiveImage;
+  bgImage?: ImageWidget;
   /**
    * @description Interval time in millisecond, example: 3000 = 3 seconds. If interval time is equal to 0, it will display only the image
    */
@@ -76,9 +76,8 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             loading="eager"
-            className={`${
-              showImage.value ? `opacity-1` : `opacity-0`
-            } transition-opacity duration-200 ease-in-out w-full object-cover`}
+            className={`${showImage.value ? `opacity-1` : `opacity-0`
+              } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : null}
