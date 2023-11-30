@@ -70,11 +70,10 @@ function Accordion(
       <>
         <div class="bg-[#BABD8D66]  lg:hover:bg-[#BABD8DCC] mb-4 lg:mb-6 exl:mb-8 rounded-lg">
           <div
-            className={`cursor-pointer flex items-center pl-5 lg:pl-6 exl:pl-10 exl:py-8 h-[48px] lg:h-[72px] rounded-md font-sfprodisplay font-medium exl:h-[96px] ${
-              open
+            className={`cursor-pointer flex items-center pl-5 lg:pl-6 exl:pl-10 exl:py-8 h-[48px] lg:h-[72px] rounded-md font-sfprodisplay font-medium exl:h-[96px] ${open
                 ? "border-b border-solid border-[#61616133] rounded-b-[0] mb-0"
                 : "bg-[#BABD8D80]"
-            }`}
+              }`}
             onClick={() => setOpen(!open)}
           >
             <div class="hidden exl:block">
@@ -95,19 +94,17 @@ function Accordion(
             className={`exl:max-h-[598px]`}
           >
             <div
-              className={`${
-                open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
-              } flex flex-col max-w-[1110px] exl:max-w-[1240px] exl:mx-auto px-5 md0:pl-[48px] md0:pr-[56px] exl:pl-[96px] exl:pr-[64px] exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
+              className={`${open ? "max-h-[457px] exl:max-h-[598px]" : "max-h-0"
+                } flex flex-col max-w-[1110px] exl:max-w-[1240px] exl:mx-auto px-5 md0:pl-[48px] md0:pr-[56px] exl:pl-[96px] exl:pr-[64px] exl:px-0 overflow-auto rounded-b-exl transition-all duration-500`}
             >
               {categories && (
                 <div class="flex flex-wrap gap-3 mt-5 md0:flex-nowrap cursor-pointer  md0:gap-2 exl:gap-4 lg:mt-6 exl:mt-10 mb-6 lg:mb-8 exl:mb-14">
                   {categories?.map((category) => (
                     <span
-                      class={`rounded-[51px] bg-[#4137031a] text-[12px] px-2 md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${
-                        selectedCategory === category
+                      class={`rounded-[51px] bg-[#4137031a] text-[12px] px-2 md0:px-[6px] md0:py-1 exl:px-3 exl:py-2 border-solid font-sfprodisplay md0:text-[10px] lg:text-[13px] exl:text-xs font-medium text-[#252D29] ${selectedCategory === category
                           ? "border-[1px] border-[#41370366]"
                           : ""
-                      }`}
+                        }`}
                       onClick={() => setSelectedCategory(category)}
                     >
                       {category}
@@ -135,6 +132,7 @@ function Accordion(
                               loading="lazy"
                               alt="Image content card"
                               width={165}
+                              height={128}
                               className="rounded-lg rounded-r-none md0:rounded-b-none md0:rounded-tr-lg md0:w-full md0:max-h-[65px] lg:max-h-[93px] lg:min-h-[93px] exl:w-full exl:max-h-[128px] exl:rounded-none exl:rounded-t-lg"
                             />
                           )}
