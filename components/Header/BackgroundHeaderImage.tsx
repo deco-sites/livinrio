@@ -32,7 +32,10 @@ export interface BackgroundHeader {
 }
 
 function BackgroundHeaderImage(
-  { background }: { background: BackgroundHeader },
+  { background, preload = false }: {
+    background: BackgroundHeader;
+    preload?: boolean;
+  },
 ) {
   const initialView = background.image?.intervalTime === 0 ||
     background.image?.intervalTime === null;
@@ -76,10 +79,11 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             height={88}
-            preload
+            preload={preload}
             loading="eager"
-            className={`${showImage.value ? `opacity-1` : `opacity-0`
-              } transition-opacity duration-200 ease-in-out w-full object-cover`}
+            className={`${
+              showImage.value ? `opacity-1` : `opacity-0`
+            } transition-opacity duration-200 ease-in-out w-full object-cover`}
           />
         )
         : null}

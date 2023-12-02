@@ -81,7 +81,12 @@ export default function Header(
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
         <div class="opacity-[30%] grid grid-cols-3 w-full md0:hidden">
-          {background?.map((bg) => <BackgroundHeaderImage background={bg} />)}
+          {background?.map((bg, index) => (
+            <BackgroundHeaderImage
+              background={bg}
+              preload={index === 4 ? true : false}
+            />
+          ))}
         </div>
 
         <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
