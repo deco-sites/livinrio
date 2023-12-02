@@ -76,6 +76,7 @@ function BackgroundHeaderImage(
             alt="background blocks"
             width={120}
             height={88}
+            fetchPriority="high"
             loading="eager"
             className={`${showImage.value ? `opacity-1` : `opacity-0`
               } transition-opacity duration-200 ease-in-out w-full object-cover`}
