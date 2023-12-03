@@ -139,7 +139,7 @@ export default function Header(
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
             {mainText && (
-              <Picture preload>
+              <Picture>
                 <Source
                   media="(max-width: 743px)"
                   fetchPriority="high"
