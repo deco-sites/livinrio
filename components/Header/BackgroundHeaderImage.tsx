@@ -90,6 +90,7 @@ function BackgroundHeaderImage(
               className={`${showImage.value ? `opacity-1` : `opacity-0`
                 } transition-opacity duration-200 ease-in-out w-full object-cover`}
               loading="eager"
+              fetchPriority="high"
               src={background.image?.bgImage}
               alt="background blocks"
             />
