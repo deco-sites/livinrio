@@ -81,10 +81,9 @@ export default function Header(
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
         <div class="opacity-[30%] grid grid-cols-3 w-full md0:hidden">
-          {background?.map((bg, index) => (
+          {background?.map((bg) => (
             <BackgroundHeaderImage
               background={bg}
-              preload={index === 4 ? true : false}
             />
           ))}
         </div>

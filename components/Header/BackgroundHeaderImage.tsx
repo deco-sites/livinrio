@@ -1,8 +1,7 @@
 import { useEffect } from "preact/compat";
-import Image from "apps/website/components/Image.tsx";
 import { useSignal } from "@preact/signals";
 import { ImageWidget } from "apps/admin/widgets.ts";
-
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 export interface BackgroundImageHeader {
   /**
    * @default false
@@ -73,18 +72,28 @@ function BackgroundHeaderImage(
     >
       {background.image?.bgImage && background.image?.showImageBg
         ? (
-          <Image
-            style={{ aspectRatio: `1 / 1` }}
-            src={background.image?.bgImage}
-            alt="background blocks"
-            width={120}
-            height={88}
-            preload={preload}
-            loading="eager"
-            className={`${
-              showImage.value ? `opacity-1` : `opacity-0`
-            } transition-opacity duration-200 ease-in-out w-full object-cover`}
-          />
+          <Picture preload>
+            <Source
+              src={background.image?.bgImage}
+              media="(min-width: 768px)"
+              width={240}
+              height={176}
+            />
+            <Source
+              src={background.image?.bgImage}
+              media="(max-width: 767px)"
+              width={90}
+              height={90}
+            />
+            <img
+              style={{ aspectRatio: `1 / 1` }}
+              className={`${showImage.value ? `opacity-1` : `opacity-0`
+                } transition-opacity duration-200 ease-in-out w-full object-cover`}
+              loading="eager"
+              src={background.image?.bgImage}
+              alt="background blocks"
+            />
+          </Picture>
         )
         : null}
     </div>
