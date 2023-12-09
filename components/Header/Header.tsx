@@ -4,7 +4,7 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import SearchContent from "deco-sites/livinrio/islands/Header/SearchContent.tsx";
 import ToggleSearchContent from "deco-sites/livinrio/islands/Header/ToggleSearchContent.tsx";
 import SubMainText from "deco-sites/livinrio/islands/Header/SubMainText.tsx";
-import BackgroundHeaderImage from "deco-sites/livinrio/islands/Header/BackgroundHeaderImage.tsx";
+import BackgroundHeaderImage from "./BackgroundHeaderImage.tsx";
 
 export interface Search {
   items: SearchItem[];
@@ -81,16 +81,21 @@ export default function Header(
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
         <div class="opacity-[30%] grid grid-cols-3 w-full md0:hidden">
-          {background?.map((bg) => (
+          {background?.map((bg, index) => (
             <BackgroundHeaderImage
+              id={`bg-blocks-${index}`}
               background={bg}
+              preload
             />
           ))}
         </div>
 
         <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
-          {backgroundDesktopLeftSide?.map((bg) => (
-            <BackgroundHeaderImage background={bg} />
+          {backgroundDesktopLeftSide?.map((bg, index) => (
+            <BackgroundHeaderImage
+              id={`bg-blocks-left-${index}`}
+              background={bg}
+            />
           ))}
           <Icon
             id="LivinRioBgStar"
@@ -170,8 +175,7 @@ export default function Header(
                   height={185}
                 />
                 <img
-                  loading="lazy"
-                  fetchPriority="low"
+                  loading="eager"
                   src={mainText?.desktop}
                   alt="LivinRio"
                 />
@@ -209,8 +213,11 @@ export default function Header(
           />
         </div>
         <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] mr-4 mt-4 ml-auto lg:mr-6 lg:mt-6 exl:mr-8 exl:mt-8 xxl:mr-12 xxl:ml-12">
-          {backgroundDesktopRightSide?.map((bg) => (
-            <BackgroundHeaderImage background={bg} />
+          {backgroundDesktopRightSide?.map((bg, index) => (
+            <BackgroundHeaderImage
+              id={`bg-blocks-right-${index}`}
+              background={bg}
+            />
           ))}
 
           <Icon
