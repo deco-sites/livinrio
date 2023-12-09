@@ -141,41 +141,37 @@ export default function Header(
               <Picture>
                 <Source
                   media="(max-width: 743px)"
-                  fetchPriority="high"
                   src={mainText?.mobile}
                   width={234}
                   height={60}
                 />
                 <Source
                   media="(min-width: 744px) and (max-width: 1023px)"
-                  fetchPriority="high"
                   src={mainText?.tablet}
                   width={273}
                   height={70}
                 />
                 <Source
                   media="(min-width: 1024px) and (max-width: 1439px)"
-                  fetchPriority="high"
                   src={mainText?.tabletTwo}
                   width={364}
                   height={93}
                 />
                 <Source
                   media="(min-width: 1440px) and (max-width: 1919px)"
-                  fetchPriority="high"
                   src={mainText?.desktop}
                   width={519}
                   height={132}
                 />
                 <Source
                   media="(min-width: 1920px)"
-                  fetchPriority="high"
                   src={mainText?.desktopTwo}
                   width={726}
                   height={185}
                 />
                 <img
-                  loading="eager"
+                  loading="lazy"
+                  fetchPriority="low"
                   src={mainText?.desktop}
                   alt="LivinRio"
                 />
