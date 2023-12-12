@@ -93,7 +93,7 @@ export default function Header(
         />
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
-        <div class="w-full md0:hidden">
+        <div class="w-full md0:hidden min-h-[70vh]">
           {mobileBackgroundVideo && (
             <video
               controls={false}
