@@ -96,7 +96,7 @@ export default function Header(
           {mobileBackgroundVideo && (
             <video
               controls={false}
-              loop
+              loop={true}
               autoplay={true}
               preload="auto"
               width="540"
