@@ -2,6 +2,7 @@ import Icon from "../ui/Icon.tsx";
 import { Head } from "$fresh/runtime.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Video from "apps/website/components/Video.tsx";
 import SearchContent from "deco-sites/livinrio/islands/Header/SearchContent.tsx";
 import ToggleSearchContent from "deco-sites/livinrio/islands/Header/ToggleSearchContent.tsx";
 import SubMainText from "deco-sites/livinrio/islands/Header/SubMainText.tsx";
@@ -94,16 +95,16 @@ export default function Header(
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
         <div class="w-full md0:hidden">
           {mobileBackgroundVideo && (
-            <video
+            <Video
               controls={false}
-              loop={true}
-              autoplay={true}
-              preload="auto"
-              width="540"
-              height="960"
-            >
-              <source src={mobileBackgroundVideo} type="video/mp4" />
-            </video>
+              loop
+              autoplay
+              width={540}
+              height={960}
+              loading="eager"
+              muted
+              src={mobileBackgroundVideo}
+            />
           )}
         </div>
 
