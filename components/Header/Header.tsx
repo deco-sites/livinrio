@@ -1,10 +1,12 @@
 import Icon from "../ui/Icon.tsx";
+import { Head } from "$fresh/runtime.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import SearchContent from "deco-sites/livinrio/islands/Header/SearchContent.tsx";
 import ToggleSearchContent from "deco-sites/livinrio/islands/Header/ToggleSearchContent.tsx";
 import SubMainText from "deco-sites/livinrio/islands/Header/SubMainText.tsx";
 import BackgroundHeaderImage from "./BackgroundHeaderImage.tsx";
+import { VideoWidget } from "apps/admin/widgets.ts";
 
 export interface Search {
   items: SearchItem[];
@@ -47,6 +49,7 @@ export interface BackgroundHeader {
 
 export interface HeaderProps {
   background: BackgroundHeader[];
+  mobileBackgroundVideo: VideoWidget;
   backgroundDesktopLeftSide: BackgroundHeader[];
   backgroundDesktopRightSide: BackgroundHeader[];
   topText: string;
@@ -63,6 +66,7 @@ export interface HeaderProps {
 
 export default function Header(
   {
+    mobileBackgroundVideo,
     background,
     backgroundDesktopLeftSide,
     backgroundDesktopRightSide,
@@ -74,20 +78,33 @@ export default function Header(
 ) {
   return (
     <>
+      <Head>
+        <link
+          rel="preload"
+          href={mobileBackgroundVideo}
+          as="video"
+          type="video/mp4"
+        />
+      </Head>
       <div class="md0:hidden">
         <SearchContent
           items={search.items}
         />
       </div>
       <header className="bg-[#FCF9EB] md0:flex md0:pb-12 exl:pb-20 xxl:pb-3">
-        <div class="opacity-[30%] grid grid-cols-3 w-full md0:hidden">
-          {background?.map((bg, index) => (
-            <BackgroundHeaderImage
-              id={`bg-blocks-${index}`}
-              background={bg}
-              preload
-            />
-          ))}
+        <div class="w-full md0:hidden">
+          {mobileBackgroundVideo && (
+            <video
+              controls={false}
+              loop
+              autoplay={true}
+              preload="auto"
+              width="540"
+              height="960"
+            >
+              <source src={mobileBackgroundVideo} type="video/mp4" />
+            </video>
+          )}
         </div>
 
         <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">

@@ -84,7 +84,7 @@ function BackgroundHeaderImage(
       >
         {background.image?.bgImage && background.image?.showImageBg
           ? (
-            <Picture preload>
+            <Picture>
               <Source
                 src={background.image?.bgImage}
                 media="(min-width: 768px)"
