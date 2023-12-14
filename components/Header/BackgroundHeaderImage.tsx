@@ -1,3 +1,5 @@
+import { useEffect } from "preact/compat";
+import { useSignal } from "@preact/signals";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 export interface BackgroundImageHeader {
@@ -11,7 +13,6 @@ export interface BackgroundImageHeader {
    */
   intervalTime?: number;
 }
-
 export interface BackgroundHeader {
   /**
    * @format color
@@ -27,97 +28,68 @@ export interface BackgroundHeader {
   bottomRightBorder?: boolean;
   image?: BackgroundImageHeader;
 }
-
-const snippet = (id: string, background: BackgroundHeader) => {
-  const initialView = background.image?.intervalTime === 0 ||
-    background.image?.intervalTime === null;
-
-  const start = () => {
-    if (initialView) return;
-
-    setInterval(() => {
-      const elm = document.querySelector(`#${id} img`) as HTMLElement;
-
-      if (elm) {
-        const opacity = elm.style.opacity;
-
-        if (opacity === "1") {
-          elm.style.opacity = "0";
-        } else {
-          elm.style.opacity = "1";
-        }
-      }
-    }, background.image?.intervalTime || 3000);
-  };
-
-  document.readyState === "complete"
-    ? start()
-    : addEventListener("load", start);
-};
-
 function BackgroundHeaderImage(
-  { background, preload = false, id }: {
+  { background, preload = false }: {
     background: BackgroundHeader;
     preload?: boolean;
-    id: string;
   },
 ) {
   const initialView = background.image?.intervalTime === 0 ||
     background.image?.intervalTime === null;
-
+  const showImage = useSignal(initialView);
+  useEffect(() => {
+    if (
+      initialView
+    ) {
+      return;
+    }
+    const imageTimer = setInterval(() => {
+      showImage.value = !showImage.value;
+    }, background.image?.intervalTime || 3000);
+    return () => {
+      clearTimeout(imageTimer);
+    };
+  }, []);
   return (
-    <>
-      <div
-        id={id}
-        style={{
-          backgroundColor: `${background.color}`,
-          borderTopLeftRadius: `${background.topLeftBorder ? `50%` : ""}`,
-          borderTopRightRadius: `${background.topRightBorder ? `50%` : ""}`,
-          borderBottomLeftRadius: `${background.bottomLeftBorder ? `50%` : ""}`,
-          borderBottomRightRadius: `${
-            background.bottomRightBorder ? `50%` : ""
-          }`,
-          backgroundSize: `100% 100%`,
-          backgroundRepeat: `no-repeat`,
-        }}
-        class={`aspect-square overflow-hidden`}
-      >
-        {background.image?.bgImage && background.image?.showImageBg
-          ? (
-            <Picture>
-              <Source
-                src={background.image?.bgImage}
-                media="(min-width: 768px)"
-                width={240}
-                height={176}
-              />
-              <Source
-                src={background.image?.bgImage}
-                media="(max-width: 767px)"
-                width={90}
-                height={90}
-              />
-              <img
-                style={{ aspectRatio: `1 / 1` }}
-                className={`${
-                  initialView ? `opacity-1` : `opacity-0`
+    <div
+      style={{
+        backgroundColor: `${background.color}`,
+        borderTopLeftRadius: `${background.topLeftBorder ? `50%` : ""}`,
+        borderTopRightRadius: `${background.topRightBorder ? `50%` : ""}`,
+        borderBottomLeftRadius: `${background.bottomLeftBorder ? `50%` : ""}`,
+        borderBottomRightRadius: `${background.bottomRightBorder ? `50%` : ""}`,
+        backgroundSize: `100% 100%`,
+        backgroundRepeat: `no-repeat`,
+      }}
+      class={`aspect-square overflow-hidden`}
+    >
+      {background.image?.bgImage && background.image?.showImageBg
+        ? (
+          <Picture preload>
+            <Source
+              src={background.image?.bgImage}
+              media="(min-width: 768px)"
+              width={240}
+              height={176}
+            />
+            <Source
+              src={background.image?.bgImage}
+              media="(max-width: 767px)"
+              width={90}
+              height={90}
+            />
+            <img
+              style={{ aspectRatio: `1 / 1` }}
+              className={`${showImage.value ? `opacity-1` : `opacity-0`
                 } transition-opacity duration-200 ease-in-out w-full object-cover`}
-                loading="eager"
-                src={background.image?.bgImage}
-                alt="background blocks"
-              />
-            </Picture>
-          )
-          : null}
-      </div>
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{
-          __html: `(${snippet})("${id}", ${JSON.stringify(background)});`,
-        }}
-      />
-    </>
+              loading="eager"
+              src={background.image?.bgImage}
+              alt="background blocks"
+            />
+          </Picture>
+        )
+        : null}
+    </div>
   );
 }
-
 export default BackgroundHeaderImage;
