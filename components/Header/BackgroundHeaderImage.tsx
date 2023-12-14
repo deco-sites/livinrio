@@ -13,7 +13,6 @@ export interface BackgroundImageHeader {
    */
   intervalTime?: number;
 }
-
 export interface BackgroundHeader {
   /**
    * @format color
@@ -29,7 +28,6 @@ export interface BackgroundHeader {
   bottomRightBorder?: boolean;
   image?: BackgroundImageHeader;
 }
-
 function BackgroundHeaderImage(
   { background, preload = false }: {
     background: BackgroundHeader;
@@ -38,25 +36,20 @@ function BackgroundHeaderImage(
 ) {
   const initialView = background.image?.intervalTime === 0 ||
     background.image?.intervalTime === null;
-
   const showImage = useSignal(initialView);
-
   useEffect(() => {
     if (
       initialView
     ) {
       return;
     }
-
     const imageTimer = setInterval(() => {
       showImage.value = !showImage.value;
     }, background.image?.intervalTime || 3000);
-
     return () => {
       clearTimeout(imageTimer);
     };
   }, []);
-
   return (
     <div
       style={{
@@ -99,5 +92,4 @@ function BackgroundHeaderImage(
     </div>
   );
 }
-
 export default BackgroundHeaderImage;

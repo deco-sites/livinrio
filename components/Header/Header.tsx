@@ -5,18 +5,15 @@ import SearchContent from "deco-sites/livinrio/islands/Header/SearchContent.tsx"
 import ToggleSearchContent from "deco-sites/livinrio/islands/Header/ToggleSearchContent.tsx";
 import SubMainText from "deco-sites/livinrio/islands/Header/SubMainText.tsx";
 import BackgroundHeaderImage from "deco-sites/livinrio/islands/Header/BackgroundHeaderImage.tsx";
-
 export interface Search {
   items: SearchItem[];
 }
-
 export interface SearchItem {
   redirectTo: string;
   image: LiveImage;
   title: string;
   contentText: string;
 }
-
 export interface BackgroundImageHeader {
   /**
    * @default false
@@ -28,7 +25,6 @@ export interface BackgroundImageHeader {
    */
   intervalTime?: number;
 }
-
 export interface BackgroundHeader {
   /**
    * @format color
@@ -44,7 +40,6 @@ export interface BackgroundHeader {
   bottomRightBorder?: boolean;
   image?: BackgroundImageHeader;
 }
-
 export interface HeaderProps {
   background: BackgroundHeader[];
   backgroundDesktopLeftSide: BackgroundHeader[];
@@ -60,7 +55,6 @@ export interface HeaderProps {
   subMainTexts: string[];
   search: Search;
 }
-
 export default function Header(
   {
     background,
@@ -87,7 +81,6 @@ export default function Header(
             />
           ))}
         </div>
-
         <div class="hidden relative md0:grid grid-cols-[repeat(3,minmax(64px,160px))] grid-rows-[repeat(6,minmax(0,64px))] lg:grid-rows-[repeat(6,minmax(0,88px))] exl:grid-rows-[repeat(6,minmax(0,128px))] xxl:grid-rows-[repeat(6,minmax(0,160px))] w-full max-w-[192px] lg:max-w-[264px] exl:max-w-[387px] xxl:max-w-[490px] ml-4 mt-4 lg:ml-6 lg:mt-6 exl:ml-8 exl:mt-8 xxl:mt-12 xxl:ml-12">
           {backgroundDesktopLeftSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
@@ -117,7 +110,6 @@ export default function Header(
             class="hidden xxl:block absolute top-[50%] translate-y-[-50%] left-[28%]"
           />
         </div>
-
         <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto z-10">
           <div className="flex items-center">
             <span className="text-[#7C6A0A] font-sfprodisplay font-extrabold text-[10px] exl:text-[16px] md0:leading-[14px] exl:leading-[22px] tracking-[6.8px] exl:tracking-[10.88px] mr-3 exl:mr-6">
@@ -175,13 +167,12 @@ export default function Header(
                   fetchPriority="high"
                 />
                 <img
-                  loading="eager"
+                  loading="lazy"
                   src={mainText?.desktop}
                   alt="LivinRio"
                 />
               </Picture>
             )}
-
             <Icon
               id="LivinRioIcon"
               width={40}
@@ -200,13 +191,10 @@ export default function Header(
               height={160}
               class="absolute top-[-62px] right-[-115px] hidden xxl:block"
             />
-
             <SubMainText subMainTexts={subMainTexts} />
           </div>
-
           <ToggleSearchContent />
         </div>
-
         <div class="hidden md0:block">
           <SearchContent
             items={search.items}
@@ -216,7 +204,6 @@ export default function Header(
           {backgroundDesktopRightSide?.map((bg) => (
             <BackgroundHeaderImage background={bg} />
           ))}
-
           <Icon
             id="LivinRioBgStar"
             width={24}
