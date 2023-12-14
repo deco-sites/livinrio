@@ -80,8 +80,9 @@ function BackgroundHeaderImage(
             />
             <img
               style={{ aspectRatio: `1 / 1` }}
-              className={`${showImage.value ? `opacity-1` : `opacity-0`
-                } transition-opacity duration-200 ease-in-out w-full object-cover`}
+              className={`${
+                showImage.value ? `opacity-1` : `opacity-0`
+              } transition-opacity duration-200 ease-in-out w-full object-cover`}
               loading="eager"
               src={background.image?.bgImage}
               alt="background blocks"

@@ -60,7 +60,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
         <h1 class="text-[#252D29] font-crimsontext text-2xl lg:text-[32px] exl:text-[48px] leading-[28.8px] exl:leading-[120%] tracking-[-0.96px] exl:tracking-[-1.92px] font-bold text-center mb-4">
           {formTitle}
         </h1>
-        <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs md0:text-[14px] md0:leading-[18px]">
+        <p class="text-[#616161] font-sfprodisplay font-normal text-center text-xs md0:text-[14px] exl:text-[16px] md0:leading-[18px]">
           {formSubTitle}
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label
               for="fullname"
-              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] exl:text-[16px] leading-[20px] text-[#252D29]"
             >
               Your complete name
             </label>
@@ -91,7 +91,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center my-4">
             <label
               for="companywebsite"
-              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] exl:text-[16px] leading-[20px] text-[#252D29]"
             >
               Company website
             </label>
@@ -109,7 +109,7 @@ export default function GetInTouch({ formTitle, formSubTitle }: form) {
           <div class="w-full max-w-[400px] flex flex-col items-center">
             <label
               for="email"
-              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] leading-[20px] text-[#252D29]"
+              class="font-sfprodisplay font-normal w-full text-xs md0:text-[14px] exl:text-[16px] leading-[20px] text-[#252D29]"
             >
               Email
             </label>

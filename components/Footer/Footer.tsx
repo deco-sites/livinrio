@@ -31,6 +31,7 @@ export default function Footer({ partners, footerItems }: Footer) {
               <Image
                 src={image.image}
                 loading="lazy"
+                alt="Marcas parceiras"
                 width={image.width}
                 height={image.height}
                 class=""
