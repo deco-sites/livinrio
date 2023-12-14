@@ -69,11 +69,17 @@ export default function Comments(
           </div>
 
           <div class="relative flex justify-center items-center gap-3 mt-7 md0:mt-8">
-            <button aria-label="Botão para voltar o slide" class="comments-button-prev">
+            <button
+              aria-label="Botão para voltar o slide"
+              class="comments-button-prev"
+            >
               <Icon id="ChevronLeftSliderMobile" width={16} height={16} />
             </button>
             <div class="swiper-pagination"></div>
-            <button aria-label="Botão para avançar o slide" class="comments-button-next">
+            <button
+              aria-label="Botão para avançar o slide"
+              class="comments-button-next"
+            >
               <Icon id="ChevronRightSliderMobile" width={16} height={16} />
             </button>
           </div>
@@ -157,8 +163,9 @@ export default function Comments(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              handleLoadScript("${asset("/lib/swiper-bundle.min.js")
-            }", loadSwiperScript);
+              handleLoadScript("${
+            asset("/lib/swiper-bundle.min.js")
+          }", loadSwiperScript);
               observer.disconnect();
             }
           });
