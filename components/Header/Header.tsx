@@ -138,40 +138,44 @@ export default function Header(
           </div>
           <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
             {mainText && (
-              <Picture>
+              <Picture preload>
                 <Source
                   media="(max-width: 743px)"
                   src={mainText?.mobile}
                   width={234}
                   height={60}
+                  fetchPriority="high"
                 />
                 <Source
                   media="(min-width: 744px) and (max-width: 1023px)"
                   src={mainText?.tablet}
                   width={273}
                   height={70}
+                  fetchPriority="high"
                 />
                 <Source
                   media="(min-width: 1024px) and (max-width: 1439px)"
                   src={mainText?.tabletTwo}
                   width={364}
                   height={93}
+                  fetchPriority="high"
                 />
                 <Source
                   media="(min-width: 1440px) and (max-width: 1919px)"
                   src={mainText?.desktop}
                   width={519}
                   height={132}
+                  fetchPriority="high"
                 />
                 <Source
                   media="(min-width: 1920px)"
                   src={mainText?.desktopTwo}
                   width={726}
                   height={185}
+                  fetchPriority="high"
                 />
                 <img
-                  loading="lazy"
-                  fetchPriority="low"
+                  loading="eager"
                   src={mainText?.desktop}
                   alt="LivinRio"
                 />
