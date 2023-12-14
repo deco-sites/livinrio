@@ -29,7 +29,7 @@ function SearchContentInside(
           id="CloseSearchIcon"
           width={24}
           height={24}
-          class="absolute right-0 top-[-28px]"
+          class="absolute right-0 top-[-28px] cursor-pointer"
           onClick={handleClose}
         />
         <div class="flex flex-col md0:flex-row justify-center gap-4 bg-[#292302] rounded-t-3xl md0:rounded-xl exl:rounded-2xl px-4 lg:px-8 w-full md0:py-4 lg:py-8 md0:h-[268px] lg:h-[371px] exl:h-[452px] md0:border-[8px] md0:border-[#616161]">
