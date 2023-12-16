@@ -110,7 +110,7 @@ export default function Header(
             class="hidden xxl:block absolute top-[50%] translate-y-[-50%] left-[28%]"
           />
         </div>
-        <div className="flex flex-col items-center justify-between md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto z-10">
+        <div className="flex flex-col items-center justify-between w-[272px] md0:w-[unset] md0:justify-normal pt-[38px] lg:pt-[56px] exl:pt-[64px] pb-20 md0:pb-0 absolute md0:static top-0 left-[50%] translate-x-[-50%] md0:translate-x-0 md0:flex-1 h-[615px] md0:h-auto z-10">
           <div className="flex items-center">
             <span className="text-[#7C6A0A] font-sfprodisplay font-extrabold text-[10px] exl:text-[16px] md0:leading-[14px] exl:leading-[22px] tracking-[6.8px] exl:tracking-[10.88px] mr-3 exl:mr-6">
               {topText}
@@ -128,7 +128,7 @@ export default function Header(
               class="hidden exl:block"
             />
           </div>
-          <div className="flex flex-col relative md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
+          <div className="flex flex-col relative h-full justify-center md0:justify-normal  md0:mt-[126.2px] lg:mt-[163px] md0:mb-[65px] lg:mb-[126px] exl:mb-[169px] exl:mt-[256px] xxl:mt-[225px] xxl:mb-[192px] md0:h-[126px] lg:h-[168px] exl:h-[231px] xxl:h-[326px]">
             {mainText && (
               <Picture preload>
                 <Source
@@ -193,7 +193,7 @@ export default function Header(
             />
             <SubMainText subMainTexts={subMainTexts} />
           </div>
-          <ToggleSearchContent />
+          {/* <ToggleSearchContent /> */}
         </div>
         <div class="hidden md0:block">
           <SearchContent
