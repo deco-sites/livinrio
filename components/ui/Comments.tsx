@@ -52,15 +52,15 @@ export default function Comments(
                   style="box-shadow:0px 0px 12px 0px rgba(0, 0, 0, 0.20);"
                   class="min-h-[145px] md0:min-h-[210px] lg:min-h-[281px] bg-white rounded-lg md0:rounded-2xl shadow-xl flex flex-col justify-center md0:justify-normal px-3 py-4 md0:p-6 lg:px-10 lg:py-10"
                 >
-                  <span class="font-sfprodisplay font-medium text-xs lg:text-base text-[#252D29] exl:text-black exl:mb-1 exl:text-lg">
+                  <span class="font-sfprodisplay font-medium text-xs lg:text-base text-[#252D29] exl:text-black exl:mb-1 exl:text-xl">
                     {props.title}
                   </span>
                   <div class="min-h-[70px] md0:min-h-[115px]">
-                    <span class="font-sfprodisplay font-normal text-xs md0:text-[10.5px] md0:leading-[18.9px] lg:leading-[25.2px] lg:text-sm exl:text-base my-1 md0:my-2 lg:mb-4 text-[#616161] webkitzada">
+                    <span class="font-sfprodisplay font-normal text-xs md0:text-[10.5px] md0:leading-[18.9px] lg:leading-[25.2px] lg:text-sm exl:text-lg my-1 md0:my-2 lg:mb-4 text-[#616161] webkitzada">
                       {props.contentText}
                     </span>
                   </div>
-                  <span class="font-sfprodisplay text-xs exl:text-sm font-medium text-[#EB6424] exl:mt-3">
+                  <span class="font-sfprodisplay text-xs exl:text-base font-medium text-[#EB6424] exl:mt-3">
                     {props.writtenBy}
                   </span>
                 </div>
@@ -163,9 +163,8 @@ export default function Comments(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              handleLoadScript("${
-            asset("/lib/swiper-bundle.min.js")
-          }", loadSwiperScript);
+              handleLoadScript("${asset("/lib/swiper-bundle.min.js")
+            }", loadSwiperScript);
               observer.disconnect();
             }
           });

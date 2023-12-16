@@ -23,7 +23,7 @@ export default function Footer({ partners, footerItems }: Footer) {
     <div class="">
       <div class="hidden md0:block max-w-[664px] lg:max-w-[656px] mx-auto pt-[56px] exl:pt-[64px]">
         <div class="flex flex-col">
-          <span class="font-sfprodisplay font-medium text-center mb-8 text-[#616161] text-base">
+          <span class="font-sfprodisplay font-medium text-center mb-8 text-[#616161] text-base exl:text-[18px]">
             Some of our partners
           </span>
           <div class="flex justify-between items-center">
